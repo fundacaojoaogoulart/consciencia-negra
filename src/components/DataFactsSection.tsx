@@ -12,70 +12,87 @@ type HeroStat = {
 
 const heroStats: HeroStat[] = [
   {
-    label: "Pessoas negras no estado do RJ",
-    value: 9.3,
-    decimals: 1,
+    label: "Pessoas negras na cidade do Rio",
+    value: 3.37,
+    decimals: 2,
     suffix: " mi",
-    note: "em um total de 16.055.174 fluminenses",
+    note: "De um total de 6,21 milhões de moradores",
   },
   {
-    label: "Da população estadual é negra",
-    value: 57.8,
+    label: "Da população carioca é negra",
+    value: 54.3,
     decimals: 1,
     suffix: "%",
-    note: "população preta e parda no estado",
+    note: "Segundo o Censo Demográfico de 2022",
   },
   {
-    label: "Maior contingente negro entre os estados",
-    value: 4,
+    label: "Maior contingente negro entre municípios brasileiros",
+    value: 2,
     suffix: "º",
-    note: "em números absolutos, no Brasil",
+    note: "Em número de moradores, atrás de São Paulo",
   },
 ];
 
 const territoryBars = [
-  { city: "Duque de Caxias", value: 68.82 },
-  { city: "Nova Iguaçu", value: 67.25 },
-  { city: "São Gonçalo", value: 62.0 },
-  { city: "Rio de Janeiro", value: 57.79 },
+  { region: "Cidade de Deus", value: 75.2 },
+  { region: "Complexo do Alemão", value: 72.0 },
+  { region: "Jacarezinho", value: 70.4 },
+  { region: "Santa Cruz", value: 69.8 },
+];
+
+const sourceLinks = [
+  {
+    label: "IBGE — Censos 2010 e 2022, tabela 9606",
+    href: "https://sidra.ibge.gov.br/tabela/9606",
+  },
+  {
+    label: "IPP/Data.Rio — Regiões Administrativas, tabela 852",
+    href: "https://datariov2-pcrj.hub.arcgis.com/content/672c1a543f694bacafe19d1ca47c1f87",
+  },
+  {
+    label: "Panorama Socioeconômico da População Negra Carioca",
+    href: "https://repertorio.pcrjmulti.rio/projetos/projeto-panorama-socioeconomico-da-populacao-negra-carioca/",
+  },
+  {
+    label: "FJG — Mapeamento da Burocracia Representativa",
+    href: "https://repertorio.rio/projetos/mapeamento-de-burocracia-representativa-da-prefeitura-do-rio/",
+  },
+  {
+    label: "SMS-Rio — Boletim de Saúde da População Negra",
+    href: "https://epirio.svs.rio.br/wp-content/uploads/2025/11/Saude_Negra_2025fim2025_11_19.html",
+  },
 ];
 
 function useCountUp(
   target: number,
   start: boolean,
   decimals = 0,
-  duration = 1300
+  duration = 1100
 ) {
   const [count, setCount] = useState(0);
-
   useEffect(() => {
     if (!start) return;
-
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setCount(target);
+      return;
+    }
     let frame = 0;
     let raf = 0;
     const totalFrames = Math.max(1, Math.round(duration / 16));
-
     const animate = () => {
       frame += 1;
-      const progress = frame / totalFrames;
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const value = target * eased;
-
-      setCount(value);
-
-      if (frame < totalFrames) {
-        raf = requestAnimationFrame(animate);
-      } else {
-        setCount(target);
-      }
+      const progress = Math.min(1, frame / totalFrames);
+      setCount(target * (1 - Math.pow(1 - progress, 3)));
+      if (progress < 1) raf = requestAnimationFrame(animate);
+      else setCount(target);
     };
-
     raf = requestAnimationFrame(animate);
-
     return () => cancelAnimationFrame(raf);
   }, [target, start, duration]);
-
-  return count.toFixed(decimals);
+  return count.toLocaleString("pt-BR", {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals,
+  });
 }
 
 function StatCard({
@@ -87,7 +104,6 @@ function StatCard({
   start,
 }: HeroStat & { start: boolean }) {
   const counted = useCountUp(value, start, decimals);
-
   return (
     <article className="data-stat-card reveal">
       <span className="data-stat-label">{label}</span>
@@ -108,7 +124,6 @@ export function DataFactsSection() {
   useEffect(() => {
     const target = sectionRef.current;
     if (!target) return;
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -116,11 +131,9 @@ export function DataFactsSection() {
           observer.disconnect();
         }
       },
-      { threshold: 0.25 }
+      { threshold: 0.2 }
     );
-
     observer.observe(target);
-
     return () => observer.disconnect();
   }, []);
 
@@ -137,11 +150,10 @@ export function DataFactsSection() {
             <span className="eyebrow">05 / Panorama racial</span>
             <h2 id="dataFactsTitle">Os números também contam histórias.</h2>
           </div>
-
           <p>
-            Um panorama sintético sobre população, território e desigualdades
-            raciais no estado do Rio de Janeiro, com base no material de
-            referência enviado para o protótipo.
+            Mais da metade da população da cidade do Rio de Janeiro é negra.
+            Veja onde vivem esses moradores e o que os dados mostram sobre
+            renda, trabalho e acesso a cargos de gestão na Prefeitura.
           </p>
         </div>
 
@@ -152,7 +164,11 @@ export function DataFactsSection() {
         </div>
 
         <div className="data-panel reveal">
-          <div className="data-tabs" role="tablist" aria-label="Explorar dados">
+          <div
+            className="data-tabs"
+            role="group"
+            aria-label="Explorar dados do município"
+          >
             <button
               type="button"
               className={activeTab === "population" ? "active" : ""}
@@ -161,7 +177,6 @@ export function DataFactsSection() {
             >
               População
             </button>
-
             <button
               type="button"
               className={activeTab === "territory" ? "active" : ""}
@@ -170,7 +185,6 @@ export function DataFactsSection() {
             >
               Território
             </button>
-
             <button
               type="button"
               className={activeTab === "inequality" ? "active" : ""}
@@ -188,44 +202,38 @@ export function DataFactsSection() {
                   <span className="data-kicker">Destaques gerais</span>
                   <ul className="data-bullet-list">
                     <li>
-                      O estado do Rio reúne <strong>9,3 milhões</strong> de
-                      pessoas negras.
+                      A cidade tem <strong>3.372.323 moradores negros</strong>,
+                      segundo o Censo 2022.
                     </li>
                     <li>
-                      Pessoas negras representam <strong>57,8%</strong> da
-                      população estadual.
+                      Entre 2010 e 2022, a participação da população negra
+                      passou de <strong>48,0% para 54,3%</strong>.
                     </li>
                     <li>
-                      O RJ é o <strong>4º maior contingente negro</strong> do
-                      país em números absolutos.
+                      Nesse período, houve um acréscimo de cerca de{" "}
+                      <strong>341 mil moradores negros</strong>.
                     </li>
                     <li>
-                      Entre as mulheres do estado, <strong>quase 57%</strong>{" "}
-                      são mulheres negras.
+                      O Rio é o <strong>2º município brasileiro</strong> com
+                      maior contingente de população negra, atrás de São Paulo.
                     </li>
                   </ul>
                 </div>
-
                 <div className="data-side-stack">
                   <article className="mini-insight">
-                    <span className="mini-insight-title">
-                      Juventude negra
-                    </span>
-                    <strong>62%</strong>
+                    <span className="mini-insight-title">Mulheres negras</span>
+                    <strong>1,77 milhão</strong>
                     <p>
-                      é o percentual observado em 42 municípios do estado, com
-                      15 municípios variando entre 70% e 78%.
+                      Cerca de 52,4% da população negra carioca é composta por
+                      mulheres.
                     </p>
                   </article>
-
                   <article className="mini-insight">
-                    <span className="mini-insight-title">
-                      Igualdade racial institucional
-                    </span>
-                    <strong>2 municípios</strong>
+                    <span className="mini-insight-title">Juventude negra</span>
+                    <strong>59,3%</strong>
                     <p>
-                      fluminenses contam com secretarias exclusivas de igualdade
-                      racial: Macaé e Rio de Janeiro.
+                      Dos jovens de 15 a 29 anos da cidade são negros,
+                      aproximadamente 750 mil pessoas.
                     </p>
                   </article>
                 </div>
@@ -236,17 +244,22 @@ export function DataFactsSection() {
               <div className="data-tab-grid territory-layout">
                 <div className="data-feature-card">
                   <span className="data-kicker">
-                    Municípios com mais de 500 mil habitantes
+                    Regiões Administrativas com maior proporção de moradores
+                    negros
                   </span>
-
                   <div className="territory-bars">
                     {territoryBars.map((item) => (
-                      <div className="territory-bar-item" key={item.city}>
+                      <div className="territory-bar-item" key={item.region}>
                         <div className="territory-bar-head">
-                          <span>{item.city}</span>
-                          <strong>{item.value.toFixed(2)}%</strong>
+                          <span>{item.region}</span>
+                          <strong>
+                            {item.value.toLocaleString("pt-BR", {
+                              minimumFractionDigits: 1,
+                              maximumFractionDigits: 1,
+                            })}
+                            %
+                          </strong>
                         </div>
-
                         <div className="territory-bar-track">
                           <div
                             className="territory-bar-fill"
@@ -257,39 +270,29 @@ export function DataFactsSection() {
                     ))}
                   </div>
                 </div>
-
                 <div className="data-side-stack">
                   <article className="mini-insight">
-                    <span className="mini-insight-title">
-                      Região Metropolitana
-                    </span>
-                    <strong>65,3%</strong>
+                    <span className="mini-insight-title">Maioria negra</span>
+                    <strong>24 de 33 RAs</strong>
                     <p>
-                      das pessoas negras do estado se concentram nessa
-                      categoria territorial.
+                      A população negra é maioria em 24 das 33 Regiões
+                      Administrativas.
                     </p>
                   </article>
-
                   <article className="mini-insight">
-                    <span className="mini-insight-title">
-                      Baixada Fluminense / RM
-                    </span>
-                    <strong>maiores percentuais</strong>
+                    <span className="mini-insight-title">Campo Grande</span>
+                    <strong>380.354 moradores</strong>
                     <p>
-                      Japeri, Belford Roxo, Queimados, São João de Meriti,
-                      Magé, Duque de Caxias, Mesquita, Nova Iguaçu, Nilópolis e
-                      Seropédica.
+                      Maior contingente de moradores negros em números
+                      absolutos.
                     </p>
                   </article>
-
                   <article className="mini-insight">
-                    <span className="mini-insight-title">
-                      Outras regiões
-                    </span>
-                    <strong>58,7% a 47%</strong>
+                    <span className="mini-insight-title">Lagoa</span>
+                    <strong>21,3%</strong>
                     <p>
-                      Baixadas Litorâneas, Norte Fluminense, Costa Verde,
-                      Centro-Sul, Médio Paraíba, Noroeste Fluminense e Serrana.
+                      Menor proporção de moradores negros entre as Regiões
+                      Administrativas da cidade.
                     </p>
                   </article>
                 </div>
@@ -299,58 +302,91 @@ export function DataFactsSection() {
             {activeTab === "inequality" && (
               <div className="data-tab-grid inequality-layout">
                 <div className="compare-card">
-                  <span className="data-kicker">Renda média mensal</span>
+                  <span className="data-kicker">
+                    Renda domiciliar mensal por pessoa · 2024
+                  </span>
                   <div className="compare-values">
                     <div>
                       <small>Pessoas negras</small>
-                      <strong>R$ 2,3k</strong>
+                      <strong>R$ 2,3 mil</strong>
                     </div>
                     <div>
                       <small>Pessoas brancas</small>
-                      <strong>R$ 4,4k</strong>
+                      <strong>R$ 4,4 mil</strong>
                     </div>
                   </div>
                   <p>
-                    Negros ganham <strong>42% menos</strong> no estado do Rio de
-                    Janeiro.
+                    Entre 2021 e 2024, descontada a inflação, a renda cresceu{" "}
+                    <strong>17,2%</strong> entre pessoas negras e{" "}
+                    <strong>10,5%</strong> entre pessoas brancas.
                   </p>
                 </div>
-
                 <div className="compare-card">
-                  <span className="data-kicker">Vitimização policial</span>
-                  <div className="single-highlight">
-                    <strong>6,4x</strong>
-                    <span>maior entre negros do que entre brancos</span>
+                  <span className="data-kicker">
+                    Mercado de trabalho · 2021–2024
+                  </span>
+                  <div className="compare-values">
+                    <div>
+                      <small>Crescimento de ocupados negros</small>
+                      <strong>27,2%</strong>
+                    </div>
+                    <div>
+                      <small>Crescimento de ocupados brancos</small>
+                      <strong>17,4%</strong>
+                    </div>
                   </div>
-                  <p>Recorte apresentado no material entre 2019 e 2023.</p>
+                  <p>
+                    Em 2024, a taxa de desemprego foi de <strong>8,9%</strong>{" "}
+                    entre pessoas negras e <strong>7,1%</strong> entre pessoas
+                    brancas.
+                  </p>
                 </div>
-
                 <div className="data-feature-card full-span">
-                  <span className="data-kicker">Leitura estrutural</span>
+                  <span className="data-kicker">
+                    Representatividade na Prefeitura · levantamento FJG
+                  </span>
                   <ul className="data-bullet-list">
                     <li>
-                      O racismo é estrutural e seu enfrentamento exige ação de
-                      Estado.
+                      <strong>51,6%</strong> dos servidores municipais com
+                      informação de raça/cor são pessoas negras.
                     </li>
                     <li>
-                      Os indicadores reforçam a importância de políticas públicas
-                      de equidade racial.
+                      <strong>41,0%</strong> dos ocupantes de cargos de gestão
+                      são pessoas negras.
                     </li>
                     <li>
-                      Memória, representatividade e acesso a direitos devem
-                      caminhar juntos.
+                      <strong>32,2%</strong> dos ocupantes de cargos de nível
+                      estratégico são pessoas negras.
                     </li>
                   </ul>
+                </div>
+                <div className="data-feature-card full-span">
+                  <span className="data-kicker">
+                    Violência interpessoal · 2024
+                  </span>
+                  <p>
+                    <strong>69,7%</strong> das notificações de violência
+                    interpessoal registradas na cidade envolveram pessoas
+                    negras.
+                  </p>
                 </div>
               </div>
             )}
           </div>
         </div>
 
-        <p className="data-disclaimer">
-          Dados apresentados a partir do material de referência enviado para o
-          protótipo. VERIFICAR A FONTE.
-        </p>
+        <div className="data-disclaimer">
+          <strong>Fontes e metodologia:</strong> dados de diferentes
+          levantamentos e períodos. Consulte as publicações originais:{" "}
+          {sourceLinks.map((source, index) => (
+            <span key={source.href}>
+              {index > 0 ? " · " : ""}
+              <a href={source.href} target="_blank" rel="noopener noreferrer">
+                {source.label} ↗
+              </a>
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );

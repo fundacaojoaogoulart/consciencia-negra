@@ -449,7 +449,7 @@
     "audience": "Servidores municipais",
     "period": "Paes — publicação em 2024",
     "what": "Elabora propostas para institucionalizar práticas antirracistas na gestão de pessoas.",
-    "status": "Relatório e apresentação publicados",
+    "status": "Relatório e apresentação publicados. O estudo foi incluído em relatório do Alto Comissariado das Nações Unidas para os Direitos Humanos em 2025 e é citado nos considerandos do Decreto Rio nº 57.249/2025.",
     "source": "RepertóRio",
     "owner": "Instituto Fundação João Goulart (FJG)",
     "years": [
@@ -463,7 +463,7 @@
     "audience": "Servidores municipais",
     "period": "Paes — 2025",
     "what": "Prevê formação, acolhimento e ações afirmativas nas relações de trabalho e atendimento público.",
-    "status": "Formalizada pelo Decreto nº 57.249/2025; execução integral não confirmada",
+    "status": "Instituída pelo Decreto Rio nº 57.249, de 19 de novembro de 2025.",
     "source": "Fundação João Goulart",
     "owner": "Instituto Fundação João Goulart (FJG), SEDHIR e secretarias de Administração, Integridade e Transparência e Coordenação Governamental",
     "years": [
@@ -680,5 +680,33 @@
     "years": [],
     "year": "A confirmar",
     "theme": "Direitos e proteção"
+  },
+  {
+    "name": "GTT Mongaba",
+    "audience": "Gestores e lideranças municipais",
+    "period": "Paes — 2023",
+    "what": "Diagnosticou a sub-representação de pessoas negras em cargos decisórios e propôs um Programa de Letramento Racial para gestores e lideranças.",
+    "status": "Relatório final elaborado. O trabalho subsidiou capacitações em letramento racial e contribuiu para o Mapeamento da Burocracia Representativa.",
+    "source": "Relatório final do GTT Mongaba (Silva et al., 2023)",
+    "owner": "Instituto Fundação João Goulart (FJG)",
+    "years": [
+      "2023"
+    ],
+    "year": "2023",
+    "theme": "Gestão e oportunidades"
+  },
+  {
+    "name": "Métodos multicritério para seleção em capacitações",
+    "audience": "Servidores municipais inscritos nas capacitações da FJG",
+    "period": "Paes — 2021",
+    "what": "Aplica critérios de proporcionalidade de sexo, raça/cor e deficiência na distribuição de vagas em capacitações. A partir de 2022, passou a priorizar pessoas negras, indígenas e amarelas nos processos seletivos.",
+    "status": "Aplicação documentada. Entre 2021 e setembro de 2024, pessoas negras representaram 47,8% das participações com raça/cor informada.",
+    "source": "Silva et al. (2025), People Analytics como ferramenta para promover diversidade e inclusão na gestão pública",
+    "owner": "Instituto Fundação João Goulart (FJG)",
+    "years": [
+      "2021"
+    ],
+    "year": "2021",
+    "theme": "Gestão e oportunidades"
   }
 ]

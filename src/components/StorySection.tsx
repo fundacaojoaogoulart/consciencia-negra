@@ -1,9 +1,7 @@
-
 import { useState } from "react";
 
 export function StorySection() {
   const [failed, setFailed] = useState(false);
-
   return (
     <section className="story section v4-story" id="sobre">
       <div className="container story-grid">
@@ -17,16 +15,13 @@ export function StorySection() {
                 onError={() => setFailed(true)}
               />
             )}
-
             <div className="story-gradient" />
-
             <span className="story-image-caption">
               A cidade guarda histórias
               <br />
               <em>que nos constituem.</em>
             </span>
           </div>
-
           <div className="story-photo-credit">
             Pedra do Sal ·{" "}
             <a
@@ -47,54 +42,38 @@ export function StorySection() {
             · foto adaptada
           </div>
         </div>
-
         <div className="story-copy reveal">
-          <span className="eyebrow">
-            01 / Memória e pertencimento
-          </span>
-
-          <h2>
-            O futuro também se constrói com memória.
-          </h2>
-
+          <span className="eyebrow">01 / Memória e pertencimento</span>
+          <h2>O futuro também se constrói com memória.</h2>
           <div className="smallrule" />
-
           <p>
-            A população negra tem papel fundamental na construção
-            da história, da cultura e da identidade do Rio de Janeiro.
-            Reconhecer essa trajetória é também compreender sua
-            presença na sociedade atual e a importância de garantir
-            representatividade e igualdade de oportunidades.
+            A população negra tem papel fundamental na construção da história,
+            da cultura e da identidade do Rio de Janeiro. Reconhecer essa
+            trajetória é também compreender sua presença na sociedade atual e a
+            importância de garantir representatividade e igualdade de
+            oportunidades.
           </p>
-
           <p>
-            No Brasil, pessoas pretas e pardas representam 55,5%
-            da população, segundo o Censo 2022. Essa maioria também
-            evidencia a importância de políticas públicas que
-            reconheçam desigualdades históricas e promovam
-            a equidade racial.
+            Na cidade do Rio de Janeiro,{" "}
+            <strong>54,3% da população é negra</strong>, segundo o Censo
+            Demográfico de 2022. São aproximadamente{" "}
+            <strong>3,37 milhões de moradores negros</strong>, reforçando a
+            importância de políticas públicas que reconheçam desigualdades
+            históricas e promovam a equidade racial.
           </p>
-
           <p>
-            No Rio de Janeiro, 48 iniciativas da Prefeitura contribuem
-            para o fortalecimento da equidade racial. Este levantamento
-            reúne ações, dados e histórias que ajudam a compreender
-            como a memória, o reconhecimento e as políticas públicas
-            podem transformar a cidade.
+            O levantamento municipal reúne{" "}
+            <strong>50 iniciativas da Prefeitura</strong> voltadas ao
+            fortalecimento da equidade racial. Este espaço apresenta ações,
+            dados e histórias que ajudam a compreender como memória,
+            reconhecimento e políticas públicas podem transformar a cidade.
           </p>
-
           <p className="story-note">
-            A presença de uma ação neste catálogo não significa,
-            por si só, que sua implementação ou impacto tenham
-            sido comprovados.
+            A presença de uma ação neste catálogo não significa, por si só, que
+            sua implementação ou impacto tenham sido comprovados.
           </p>
-
-          <a
-            className="story-inline-link"
-            href="#linha-do-tempo"
-          >
-            Percorrer essa história{" "}
-            <span aria-hidden="true">↗</span>
+          <a className="story-inline-link" href="#linha-do-tempo">
+            Percorrer essa história <span aria-hidden="true">↗</span>
           </a>
         </div>
       </div>

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 type Story = {
@@ -74,9 +73,7 @@ function EditorialPhoto({ item }: { item: Story }) {
 
       <span className="image-shade" aria-hidden="true" />
 
-      <span className="photo-location">
-        {item.location}
-      </span>
+      <span className="photo-location">{item.location}</span>
     </div>
   );
 }
@@ -101,13 +98,9 @@ export function HeritageSection() {
           </div>
 
           <p>
-            A presença negra está na história, na cultura e na
-            construção do Rio de Janeiro. Reconhecer essa
-            contribuição também significa promover políticas
-            públicas que enfrentem desigualdades, ampliem
-            direitos e fortaleçam a equidade racial. Conheça
-            iniciativas da Prefeitura que contribuem para
-            essa transformação.
+            A presença negra faz parte da história, da cultura e da identidade
+            do Rio de Janeiro. Conheça iniciativas da Prefeitura que valorizam
+            essa trajetória, ampliam direitos e promovem a equidade racial.
           </p>
         </div>
 
@@ -131,10 +124,7 @@ export function HeritageSection() {
 
                 <p>{item.description}</p>
 
-                <a
-                  className="tile-link"
-                  href="#iniciativas"
-                >
+                <a className="tile-link" href="#iniciativas">
                   Explorar iniciativas
                   <span aria-hidden="true">↗</span>
                 </a>
