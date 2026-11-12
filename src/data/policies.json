@@ -1,0 +1,684 @@
+[
+  {
+    "name": "Circuito Histórico e Arqueológico de Celebração da Herança Africana",
+    "audience": "Comunidade",
+    "period": "Paes — 2011",
+    "what": "Integra lugares de memória e patrimônio africano na Região Portuária.",
+    "status": "Instituído",
+    "source": "CCPar",
+    "owner": "Companhia de Desenvolvimento Urbano da Região do Porto (CDURP) / área municipal de patrimônio cultural",
+    "years": [
+      "2011"
+    ],
+    "year": "2011",
+    "theme": "Cultura e memória"
+  },
+  {
+    "name": "Restauração do Centro Cultural José Bonifácio",
+    "audience": "Comunidade",
+    "period": "Paes — 2013",
+    "what": "Recupera espaço de referência da cultura afro-brasileira na Gamboa.",
+    "status": "Reinaugurado",
+    "source": "Prefeitura",
+    "owner": "CDURP, Secretaria Municipal de Cultura (SMC) e Instituto Rio Patrimônio da Humanidade (IRPH)",
+    "years": [
+      "2013"
+    ],
+    "year": "2013",
+    "theme": "Cultura e memória"
+  },
+  {
+    "name": "Reserva de vagas em concursos — Lei nº 5.695/2014",
+    "audience": "Candidatos negros e indígenas",
+    "period": "Paes — 2014",
+    "what": "Estabelece reserva de cargos e empregos públicos municipais. Conferir a legislação consolidada para as regras atuais.",
+    "status": "Lei identificada",
+    "source": "Câmara Municipal",
+    "owner": "Administração municipal — órgãos e entidades responsáveis pelos concursos",
+    "years": [
+      "2014"
+    ],
+    "year": "2014",
+    "theme": "Gestão e oportunidades"
+  },
+  {
+    "name": "Renovação da política de cotas — Lei nº 8.267/2024",
+    "audience": "Candidatos negros e indígenas",
+    "period": "Paes — 2024",
+    "what": "Altera o artigo 7º da Lei nº 5.695/2014. É uma atualização/renovação da política existente por mais 10 anos.",
+    "status": "Alteração legal identificada",
+    "source": "Portal de Concursos",
+    "owner": "Administração municipal — órgãos e entidades responsáveis pelos concursos",
+    "years": [
+      "2024"
+    ],
+    "year": "2024",
+    "theme": "Participação e articulação"
+  },
+  {
+    "name": "Programa GM sem Preconceito",
+    "audience": "Guardas municipais",
+    "period": "Paes — criação em 2016; ações em 2023–2024",
+    "what": "Conscientiza o efetivo sobre racismo e outras formas de discriminação.",
+    "status": "Execução documentada",
+    "source": "Guarda Municipal",
+    "owner": "Guarda Municipal do Rio de Janeiro (GM-Rio)",
+    "years": [
+      "2016",
+      "2023",
+      "2024"
+    ],
+    "year": "2016",
+    "theme": "Direitos e proteção"
+  },
+  {
+    "name": "COMDEDINE-RIO — Conselho Municipal de Defesa dos Direitos do Negro",
+    "audience": "Comunidade e movimento negro",
+    "period": "Paes — registros de 2016 e 2025",
+    "what": "Articula participação social e propostas de igualdade racial. O conselho existe desde 1987.",
+    "status": "Atuação e renovação de diretoria documentadas",
+    "source": "Prefeitura",
+    "owner": "Conselho Municipal de Defesa dos Direitos do Negro (COMDEDINE-RIO), vinculado à SEDHIR",
+    "years": [
+      "2016",
+      "2025"
+    ],
+    "year": "2016",
+    "theme": "Direitos e proteção"
+  },
+  {
+    "name": "GERER — Educação para as Relações Étnico-Raciais",
+    "audience": "Alunos e profissionais da educação",
+    "period": "Paes — 2021; continuidade documentada em 2026, com Cavaliere",
+    "what": "Desenvolve educação antirracista por meio do currículo, materiais didáticos e formação docente.",
+    "status": "Execução documentada",
+    "source": "Secretaria de Educação",
+    "owner": "Secretaria Municipal de Educação (SME) / Gerência de Relações Étnico-Raciais (GERER)",
+    "years": [
+      "2021",
+      "2026"
+    ],
+    "year": "2021",
+    "theme": "Educação"
+  },
+  {
+    "name": "Jornadas de Educação das Relações Étnico-Raciais",
+    "audience": "Profissionais da educação",
+    "period": "Paes — 2021 e 2022",
+    "what": "Promovem mesas e oficinas sobre práticas educacionais antirracistas.",
+    "status": "Edições divulgadas",
+    "source": "Prefeitura",
+    "owner": "Secretaria Municipal de Educação (SME) / Gerência de Relações Étnico-Raciais (GERER)",
+    "years": [
+      "2021",
+      "2022"
+    ],
+    "year": "2021",
+    "theme": "Educação"
+  },
+  {
+    "name": "Museu da História e da Cultura Afro-Brasileira — MUHCAB",
+    "audience": "Comunidade",
+    "period": "Paes — abertura em 2021; requalificação em 2024",
+    "what": "Preserva e divulga história, memória e cultura afro-brasileira.",
+    "status": "Equipamento aberto e requalificado",
+    "source": "Prefeitura",
+    "owner": "Secretaria Municipal de Cultura (SMC) / Museu da História e da Cultura Afro-Brasileira (MUHCAB)",
+    "years": [
+      "2021",
+      "2024"
+    ],
+    "year": "2021",
+    "theme": "Cultura e memória"
+  },
+  {
+    "name": "Site do MUHCAB em parceria com a Unesco",
+    "audience": "Comunidade",
+    "period": "Paes — 2021",
+    "what": "Amplia o acesso digital ao patrimônio e à memória afro-brasileira.",
+    "status": "Site lançado",
+    "source": "Prefeitura",
+    "owner": "Secretaria Municipal de Cultura (SMC) / MUHCAB, em parceria com a Unesco",
+    "years": [
+      "2021"
+    ],
+    "year": "2021",
+    "theme": "Cultura e memória"
+  },
+  {
+    "name": "Estudo sobre mulheres negras no mercado de trabalho carioca",
+    "audience": "Mulheres negras e gestores públicos",
+    "period": "Paes — 2021",
+    "what": "Analisa desigualdades de raça e gênero e efeitos da pandemia no trabalho.",
+    "status": "Estudo publicado",
+    "source": "Prefeitura",
+    "owner": "Secretaria Municipal de Desenvolvimento Econômico, Inovação e Simplificação (SMDEIS)",
+    "years": [
+      "2021"
+    ],
+    "year": "2021",
+    "theme": "Gestão e oportunidades"
+  },
+  {
+    "name": "Territórios Antirracistas",
+    "audience": "Organizações da sociedade civil e comunidade",
+    "period": "Paes — 2022",
+    "what": "Seleciona projetos culturais, artísticos e científicos de promoção da igualdade racial.",
+    "status": "Sete propostas selecionadas; pagamentos não confirmados nesta pesquisa",
+    "source": "Prefeitura",
+    "owner": "Secretaria Municipal de Governo e Integridade Pública (SEGOVI) / Coordenadoria Executiva de Promoção da Igualdade Racial (CEPIR)",
+    "years": [
+      "2022"
+    ],
+    "year": "2022",
+    "theme": "Cultura e memória"
+  },
+  {
+    "name": "Pacto de Combate ao Racismo e Rede de Cidades Antirracistas",
+    "audience": "População dos municípios participantes",
+    "period": "Paes — 2022",
+    "what": "Articula municípios para compartilhar políticas e compromissos de igualdade racial.",
+    "status": "Convênio assinado",
+    "source": "Prefeitura",
+    "owner": "Secretaria Municipal de Governo e Integridade Pública (SEGOVI) / Coordenadoria Executiva de Promoção da Igualdade Racial (CEPIR)",
+    "years": [
+      "2022"
+    ],
+    "year": "2022",
+    "theme": "Direitos e proteção"
+  },
+  {
+    "name": "Carta Brasileira pela Igualdade Racial",
+    "audience": "Municípios e sociedade civil",
+    "period": "Paes — 2022",
+    "what": "Reúne compromissos de enfrentamento ao racismo associados à rede de cidades.",
+    "status": "Documento lançado",
+    "source": "Prefeitura",
+    "owner": "Secretaria Municipal de Governo e Integridade Pública (SEGOVI) / Coordenadoria Executiva de Promoção da Igualdade Racial (CEPIR)",
+    "years": [
+      "2022"
+    ],
+    "year": "2022",
+    "theme": "Direitos e proteção"
+  },
+  {
+    "name": "Rede Global de Cidades Antirracistas",
+    "audience": "Municípios e população",
+    "period": "Paes — 2023",
+    "what": "Amplia internacionalmente a cooperação entre cidades em políticas de igualdade racial.",
+    "status": "Rede lançada",
+    "source": "Casa Civil",
+    "owner": "Casa Civil / Coordenadoria de Promoção da Igualdade Racial (CPIR)",
+    "years": [
+      "2023"
+    ],
+    "year": "2023",
+    "theme": "Participação e articulação"
+  },
+  {
+    "name": "INDEPIR — Índice de Monitoramento das Políticas de Promoção da Igualdade Racial",
+    "audience": "Gestores públicos",
+    "period": "Paes — 2023",
+    "what": "Monitora o desenvolvimento das políticas de igualdade racial nas cidades participantes.",
+    "status": "Instrumento documentado; manutenção anunciada",
+    "source": "Prefeitura",
+    "owner": "Casa Civil / Coordenadoria de Promoção da Igualdade Racial (CPIR); parceria com a UFF",
+    "years": [
+      "2023"
+    ],
+    "year": "2023",
+    "theme": "Participação e articulação"
+  },
+  {
+    "name": "Guia Turístico da Pequena África",
+    "audience": "Comunidade e visitantes",
+    "period": "Paes — 2022",
+    "what": "Divulga lugares ligados à história e à cultura negra na Região Portuária.",
+    "status": "Guia lançado",
+    "source": "Prefeitura",
+    "owner": "Secretaria Municipal de Governo e Integridade Pública (SEGOVI) / Coordenadoria Executiva de Promoção da Igualdade Racial (CEPIR)",
+    "years": [
+      "2022"
+    ],
+    "year": "2022",
+    "theme": "Cultura e memória"
+  },
+  {
+    "name": "Notificação de racismo e preconceito religioso pelo 1746",
+    "audience": "Vítimas de discriminação",
+    "period": "Paes — 2022; serviço documentado em 2025",
+    "what": "Recebe relatos e encaminha casos aos órgãos competentes.",
+    "status": "Serviço documentado",
+    "source": "Portal de Serviços",
+    "owner": "Secretaria Especial de Direitos Humanos e Igualdade Racial (SEDHIR) / Central 1746",
+    "years": [
+      "2022",
+      "2025"
+    ],
+    "year": "2022",
+    "theme": "Direitos e proteção"
+  },
+  {
+    "name": "Cartilha Rio de Combate à Intolerância Religiosa",
+    "audience": "Comunidade e praticantes de diferentes religiões",
+    "period": "Paes — 2022",
+    "what": "Informa direitos e canais de denúncia, com relevância para o enfrentamento ao racismo religioso.",
+    "status": "Cartilha disponibilizada",
+    "source": "Prefeitura",
+    "owner": "Secretaria Municipal de Governo e Integridade Pública (SEGOVI) / Coordenadoria Executiva de Diversidade Religiosa (CEDR)",
+    "years": [
+      "2022"
+    ],
+    "year": "2022",
+    "theme": "Direitos e proteção"
+  },
+  {
+    "name": "Circuito da Diversidade Religiosa do Patrimônio Cultural Carioca",
+    "audience": "Comunidades religiosas e população",
+    "period": "Paes — 2022",
+    "what": "Propõe valorização de lugares e manifestações da diversidade religiosa.",
+    "status": "Criação anunciada; implantação completa não confirmada",
+    "source": "Prefeitura",
+    "owner": "Instituto Rio Patrimônio da Humanidade (IRPH), CEPIR e Coordenadoria de Diversidade Religiosa",
+    "years": [
+      "2022"
+    ],
+    "year": "2022",
+    "theme": "Cultura e memória"
+  },
+  {
+    "name": "Programa Municipal de Saúde Integral da População Negra Carioca",
+    "audience": "População negra",
+    "period": "Paes — 2022",
+    "what": "Promove atenção integral à saúde e enfrentamento das desigualdades raciais no SUS municipal.",
+    "status": "Instituído pela Lei nº 7.749/2022",
+    "source": "Secretaria de Saúde",
+    "owner": "Secretaria Municipal de Saúde (SMS)",
+    "years": [
+      "2022"
+    ],
+    "year": "2022",
+    "theme": "Saúde"
+  },
+  {
+    "name": "GT Lenora Mendes Louro e Grupo Gestor de Saúde da População Negra",
+    "audience": "Profissionais de saúde e sociedade civil",
+    "period": "Paes — 2023 e 2024",
+    "what": "Organizam a implementação e o acompanhamento do programa municipal de saúde da população negra.",
+    "status": "Grupos instituídos",
+    "source": "Secretaria de Saúde",
+    "owner": "Secretaria Municipal de Saúde (SMS)",
+    "years": [
+      "2023",
+      "2024"
+    ],
+    "year": "2023",
+    "theme": "Saúde"
+  },
+  {
+    "name": "Semana da Consciência Negra da Guarda Municipal",
+    "audience": "Guardas municipais",
+    "period": "Paes — registros de 2022 e 2025",
+    "what": "Promove atividades educativas e culturais sobre racismo e cultura africana.",
+    "status": "Edições documentadas",
+    "source": "Guarda Municipal",
+    "owner": "Guarda Municipal do Rio de Janeiro (GM-Rio)",
+    "years": [
+      "2022",
+      "2025"
+    ],
+    "year": "2022",
+    "theme": "Educação"
+  },
+  {
+    "name": "Programa Líderes Cariocas — acompanhamento da representatividade racial",
+    "audience": "Servidores municipais",
+    "period": "Paes — seleção de 2022 e formação de 2023",
+    "what": "Desenvolve lideranças e acompanha a composição racial das turmas. Não é exclusivo para pessoas negras.",
+    "status": "Resultado publicado: 49% de novos líderes negros em 2023",
+    "source": "Prefeitura",
+    "owner": "Instituto Fundação João Goulart (FJG)",
+    "years": [
+      "2022",
+      "2023"
+    ],
+    "year": "2022",
+    "theme": "Gestão e oportunidades"
+  },
+  {
+    "name": "Prêmio Glória Maria — Mulheres Afrolatinas Cariocas",
+    "audience": "Mulheres negras",
+    "period": "Paes — 2023",
+    "what": "Reconhece trajetórias e contribuições de mulheres negras para a cidade.",
+    "status": "Primeira edição realizada, com sete homenageadas",
+    "source": "Prefeitura",
+    "owner": "Secretaria de Políticas e Promoção da Mulher (SPM-Rio)",
+    "years": [
+      "2023"
+    ],
+    "year": "2023",
+    "theme": "Participação e articulação"
+  },
+  {
+    "name": "Julho das Pretas — Nave do Conhecimento do Engenhão",
+    "audience": "Mulheres negras e comunidade",
+    "period": "Paes — 2023",
+    "what": "Debate tecnologia, diversidade e inclusão de mulheres negras.",
+    "status": "Segunda edição divulgada",
+    "source": "Prefeitura",
+    "owner": "Secretaria Municipal de Ciência e Tecnologia (SMCT) / Nave do Conhecimento do Engenhão",
+    "years": [
+      "2023"
+    ],
+    "year": "2023",
+    "theme": "Participação e articulação"
+  },
+  {
+    "name": "Apoio à IX Marcha das Mulheres Negras do Rio",
+    "audience": "Mulheres negras",
+    "period": "Paes — 2023",
+    "what": "Apoia mobilização da sociedade civil contra desigualdades raciais e de gênero.",
+    "status": "Apoio e participação municipal registrados",
+    "source": "Relatório da Secretaria da Mulher",
+    "owner": "Secretaria de Políticas e Promoção da Mulher (SPM-Rio) — apoio à marcha",
+    "years": [
+      "2023"
+    ],
+    "year": "2023",
+    "theme": "Participação e articulação"
+  },
+  {
+    "name": "Desabrocha em Mim — Mulheres Pretas",
+    "audience": "Comunidade",
+    "period": "Paes — 2023",
+    "what": "Espetáculo sobre mulheres pretas e música negra, patrocinado pelo programa municipal FOCA.",
+    "status": "Temporada gratuita divulgada",
+    "source": "Prefeitura",
+    "owner": "Secretaria Municipal de Cultura (SMC) — patrocínio pelo programa FOCA",
+    "years": [
+      "2023"
+    ],
+    "year": "2023",
+    "theme": "Participação e articulação"
+  },
+  {
+    "name": "Circuito da Igualdade Racial — parceria com Negro Muro",
+    "audience": "Comunidade",
+    "period": "Paes — 2023",
+    "what": "Identifica lugares relacionados à cultura e a personalidades negras com placas de patrimônio.",
+    "status": "Projeto lançado",
+    "source": "Prefeitura",
+    "owner": "Secretaria Municipal de Cultura (SMC), CEPIR e Instituto Rio Patrimônio da Humanidade (IRPH); parceria com Negro Muro",
+    "years": [
+      "2023"
+    ],
+    "year": "2023",
+    "theme": "Cultura e memória"
+  },
+  {
+    "name": "Novembro Negro Rio",
+    "audience": "Comunidade e servidores",
+    "period": "Paes — registros de 2023 a 2025",
+    "what": "Reúne ações culturais, educativas e de igualdade racial de diferentes órgãos municipais.",
+    "status": "Programações divulgadas",
+    "source": "Prefeitura",
+    "owner": "Casa Civil / CPIR (2023–2024); SEDHIR (2025), com participação de outros órgãos municipais",
+    "years": [
+      "2023",
+      "2025"
+    ],
+    "year": "2023",
+    "theme": "Educação"
+  },
+  {
+    "name": "I Semana das Nações de Matriz Africana Luzia de Pinta",
+    "audience": "Povos e comunidades de matriz africana",
+    "period": "Paes — 2024",
+    "what": "Valoriza tradições africanas e promove enfrentamento à discriminação religiosa.",
+    "status": "Programação divulgada",
+    "source": "Prefeitura",
+    "owner": "Secretaria Municipal de Meio Ambiente e Clima (SMAC) / Assessoria para Povos e Comunidades Tradicionais",
+    "years": [
+      "2024"
+    ],
+    "year": "2024",
+    "theme": "Direitos e proteção"
+  },
+  {
+    "name": "GTT Política Antirracista de Gestão de Pessoas",
+    "audience": "Servidores municipais",
+    "period": "Paes — publicação em 2024",
+    "what": "Elabora propostas para institucionalizar práticas antirracistas na gestão de pessoas.",
+    "status": "Relatório e apresentação publicados",
+    "source": "RepertóRio",
+    "owner": "Instituto Fundação João Goulart (FJG)",
+    "years": [
+      "2024"
+    ],
+    "year": "2024",
+    "theme": "Gestão e oportunidades"
+  },
+  {
+    "name": "Política Antirracista na Gestão de Pessoas",
+    "audience": "Servidores municipais",
+    "period": "Paes — 2025",
+    "what": "Prevê formação, acolhimento e ações afirmativas nas relações de trabalho e atendimento público.",
+    "status": "Formalizada pelo Decreto nº 57.249/2025; execução integral não confirmada",
+    "source": "Fundação João Goulart",
+    "owner": "Instituto Fundação João Goulart (FJG), SEDHIR e secretarias de Administração, Integridade e Transparência e Coordenação Governamental",
+    "years": [
+      "2025"
+    ],
+    "year": "2025",
+    "theme": "Gestão e oportunidades"
+  },
+  {
+    "name": "Mapeamento da Burocracia Representativa",
+    "audience": "Servidores e gestores públicos",
+    "period": "Paes — divulgação em 2025",
+    "what": "Analisa a composição racial do funcionalismo para subsidiar decisões de gestão.",
+    "status": "Estudo divulgado",
+    "source": "Prefeitura",
+    "owner": "Instituto Fundação João Goulart (FJG)",
+    "years": [
+      "2025"
+    ],
+    "year": "2025",
+    "theme": "Gestão e oportunidades"
+  },
+  {
+    "name": "Curso de Promoção da Saúde Antirracista — CMS Renato Rocco",
+    "audience": "Profissionais de saúde e usuários",
+    "period": "Paes — 2025",
+    "what": "Trabalha direitos da população negra e qualificação do atendimento, em parceria com a Fiocruz.",
+    "status": "Curso realizado",
+    "source": "Prefeitura",
+    "owner": "Secretaria Municipal de Saúde (SMS) / Centro Municipal de Saúde Renato Rocco; parceria com a Fiocruz",
+    "years": [
+      "2025"
+    ],
+    "year": "2025",
+    "theme": "Saúde"
+  },
+  {
+    "name": "Adesão ao Plano Juventude Negra Viva",
+    "audience": "Jovens negros",
+    "period": "Paes — 2025",
+    "what": "Articula oportunidades e prevenção de violências por meio da adesão municipal ao plano federal.",
+    "status": "Adesão formalizada",
+    "source": "Prefeitura",
+    "owner": "Secretaria Especial de Direitos Humanos e Igualdade Racial (SEDHIR) e Secretaria Especial da Juventude Carioca; adesão a plano federal",
+    "years": [
+      "2025"
+    ],
+    "year": "2025",
+    "theme": "Direitos e proteção"
+  },
+  {
+    "name": "Título de posse do Quilombo Camorim",
+    "audience": "Comunidade quilombola",
+    "period": "Paes — 2025, com Cavaliere como vice",
+    "what": "Promove reconhecimento e proteção territorial da comunidade.",
+    "status": "Entrega noticiada; instrumento e área abrangida precisam ser conferidos",
+    "source": "Prefeitura",
+    "owner": "Secretaria Especial de Direitos Humanos e Igualdade Racial (SEDHIR)",
+    "years": [
+      "2025"
+    ],
+    "year": "2025",
+    "theme": "Direitos e proteção"
+  },
+  {
+    "name": "Revitalização do Renascença Clube",
+    "audience": "Comunidade e frequentadores",
+    "period": "Paes — 2025",
+    "what": "Recupera espaço histórico de convivência, memória e cultura negra.",
+    "status": "Reforma entregue",
+    "source": "Prefeitura",
+    "owner": "Secretaria Municipal de Infraestrutura (SMI) / Rio-Urbe",
+    "years": [
+      "2025"
+    ],
+    "year": "2025",
+    "theme": "Cultura e memória"
+  },
+  {
+    "name": "Centro Cultural Rio-Áfricas",
+    "audience": "Comunidade e visitantes",
+    "period": "Paes — 2025; Cavaliere — 2026",
+    "what": "Prevê equipamento de memória e cultura afro-diaspórica na Pequena África.",
+    "status": "Demolição em 2025 e construção iniciada em 2026",
+    "source": "Prefeitura",
+    "owner": "Companhia Carioca de Parcerias e Investimentos (CCPar) e Secretaria Municipal de Cultura (SMC)",
+    "years": [
+      "2025",
+      "2026"
+    ],
+    "year": "2025",
+    "theme": "Cultura e memória"
+  },
+  {
+    "name": "Concurso de arquitetura do Centro Cultural Rio-Áfricas",
+    "audience": "Arquitetos negros brasileiros e africanos lusófonos",
+    "period": "Paes — documentado em 2025",
+    "what": "Seleciona o projeto arquitetônico do equipamento com valorização da autoria negra.",
+    "status": "Projeto vencedor selecionado",
+    "source": "Prefeitura",
+    "owner": "Companhia Carioca de Parcerias e Investimentos (CCPar); parceria com o IAB-RJ",
+    "years": [
+      "2025"
+    ],
+    "year": "2025",
+    "theme": "Cultura e memória"
+  },
+  {
+    "name": "Ananse — Formação para Educadores em Cultura e Arte Negra",
+    "audience": "Educadores",
+    "period": "Paes — programação de 2025",
+    "what": "Oferece formação em cultura e arte afro-brasileira e africana pelo MUHCAB.",
+    "status": "Curso incluído na programação oficial",
+    "source": "Prefeitura",
+    "owner": "Secretaria Municipal de Cultura (SMC) / Museu da História e da Cultura Afro-Brasileira (MUHCAB)",
+    "years": [
+      "2025"
+    ],
+    "year": "2025",
+    "theme": "Educação"
+  },
+  {
+    "name": "Sem Racismo, o Carnaval Brilha Mais",
+    "audience": "Foliões e população",
+    "period": "Paes — janeiro de 2026",
+    "what": "Apoia a divulgação da campanha federal de enfrentamento ao racismo no Carnaval.",
+    "status": "Parceria anunciada",
+    "source": "Prefeitura",
+    "owner": "Secretaria Especial de Direitos Humanos e Igualdade Racial (SEDHIR) e Riotur; parceria com o Ministério da Igualdade Racial",
+    "years": [
+      "2026"
+    ],
+    "year": "2026",
+    "theme": "Direitos e proteção"
+  },
+  {
+    "name": "Rede Liberdade Religiosa",
+    "audience": "Casas e comunidades de matriz africana",
+    "period": "Paes — edital de fevereiro de 2026",
+    "what": "Prevê mapeamento, apoio e regularização de casas de matriz africana.",
+    "status": "Edital publicado; execução não confirmada",
+    "source": "Edital da Casa Civil",
+    "owner": "Secretaria Municipal da Casa Civil / Coordenadoria de Diversidade Religiosa (CDR)",
+    "years": [
+      "2026"
+    ],
+    "year": "2026",
+    "theme": "Participação e articulação"
+  },
+  {
+    "name": "Casa da Igualdade Racial",
+    "audience": "População negra e vítimas de racismo",
+    "period": "Transição Paes–Cavaliere — 20/03/2026",
+    "what": "Oferece acolhimento e articulação de apoio jurídico, psicossocial e acesso a direitos, em parceria federal.",
+    "status": "Inauguração documentada",
+    "source": "SEDHIR",
+    "owner": "Secretaria Especial de Direitos Humanos e Igualdade Racial (SEDHIR); parceria com o Ministério da Igualdade Racial",
+    "years": [
+      "2026"
+    ],
+    "year": "2026",
+    "theme": "Direitos e proteção"
+  },
+  {
+    "name": "PRESENÇA — Desenvolvimento de Lideranças Negras e Indígenas",
+    "audience": "Diretores e diretores adjuntos da SME",
+    "period": "Cavaliere — 2026",
+    "what": "Desenvolve lideranças negras e indígenas da Educação.",
+    "status": "Seleção publicada com 30 vagas; conclusão não confirmada",
+    "source": "Seleção da SME",
+    "owner": "Secretaria Municipal de Educação (SME) / Gerência de Seleção e Desempenho",
+    "years": [
+      "2026"
+    ],
+    "year": "2026",
+    "theme": "Educação"
+  },
+  {
+    "name": "Circuito / Feira Rio AfroCriativo",
+    "audience": "Artesãos e empreendedores afro-brasileiros",
+    "period": "Cavaliere — 2026",
+    "what": "Promove exposição e comercialização de produtos, valorização cultural e geração de renda.",
+    "status": "Chamamento e realização de feira documentados",
+    "source": "SEDHIR",
+    "owner": "Secretaria Especial de Direitos Humanos e Igualdade Racial (SEDHIR) / Coordenadoria de Promoção da Igualdade Racial (CPIR)",
+    "years": [
+      "2026"
+    ],
+    "year": "2026",
+    "theme": "Cultura e memória"
+  },
+  {
+    "name": "Ciclo de Debates SUAS Carioca sem Racismo",
+    "audience": "Profissionais, conselheiros e rede socioassistencial",
+    "period": "Cavaliere — 2026",
+    "what": "Compartilha práticas antirracistas e fortalece a equidade racial na assistência social.",
+    "status": "Encontros realizados",
+    "source": "Secretaria de Assistência Social",
+    "owner": "Conselho Municipal de Assistência Social (CMAS-Rio); apoio da Secretaria Municipal de Assistência Social (SMAS)",
+    "years": [
+      "2026"
+    ],
+    "year": "2026",
+    "theme": "Direitos e proteção"
+  },
+  {
+    "name": "Parceria SEDHIR–Defensoria para enfrentamento ao racismo",
+    "audience": "Vítimas de discriminação racial",
+    "period": "Cavaliere — atribuição contextual; data a confirmar",
+    "what": "Propõe integrar acolhimento, orientação jurídica e encaminhamento de denúncias.",
+    "status": "Articulação noticiada; assinatura do termo não confirmada",
+    "source": "SEDHIR",
+    "owner": "Secretaria Especial de Direitos Humanos e Igualdade Racial (SEDHIR); parceria com a Defensoria Pública do Estado do Rio de Janeiro",
+    "years": [],
+    "year": "A confirmar",
+    "theme": "Direitos e proteção"
+  }
+]
