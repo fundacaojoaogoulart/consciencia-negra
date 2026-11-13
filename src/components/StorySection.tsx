@@ -2,6 +2,7 @@ import { useState } from "react";
 
 export function StorySection() {
   const [failed, setFailed] = useState(false);
+
   return (
     <section className="story section v4-story" id="sobre">
       <div className="container story-grid">
@@ -42,10 +43,12 @@ export function StorySection() {
             · foto adaptada
           </div>
         </div>
+
         <div className="story-copy reveal">
           <span className="eyebrow">01 / Memória e pertencimento</span>
-          <h2>O futuro também se constrói com memória.</h2>
+          <h2>Do pioneirismo ao futuro: uma história em construção.</h2>
           <div className="smallrule" />
+
           <p>
             A população negra tem papel fundamental na construção da história,
             da cultura e da identidade do Rio de Janeiro. Reconhecer essa
@@ -68,10 +71,17 @@ export function StorySection() {
             dados e histórias que ajudam a compreender como memória,
             reconhecimento e políticas públicas podem transformar a cidade.
           </p>
-          <p className="story-note">
-            A presença de uma ação neste catálogo não significa, por si só, que
-            sua implementação ou impacto tenham sido comprovados.
-          </p>
+
+          <blockquote className="story-editorial-quote">
+            <p>
+              “Ser negro não pode impedir o desejo de existir na cidade de
+              nenhum de nós.”
+            </p>
+            <footer>
+              Rafaela Bastos · Aula magna “Por um Rio Antirracista”
+            </footer>
+          </blockquote>
+
           <a className="story-inline-link" href="#linha-do-tempo">
             Percorrer essa história <span aria-hidden="true">↗</span>
           </a>

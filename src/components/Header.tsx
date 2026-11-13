@@ -5,6 +5,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  // Fecha o menu ao navegar entre as seções
   useEffect(() => {
     const close = () => setOpen(false);
 
@@ -15,6 +16,7 @@ export function Header() {
     };
   }, []);
 
+  // Estilo do cabeçalho durante a rolagem
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 24);
@@ -22,28 +24,42 @@ export function Header() {
 
     handleScroll();
 
-    window.addEventListener("scroll", handleScroll, {
-      passive: true,
-    });
+    window.addEventListener(
+      "scroll",
+      handleScroll,
+      { passive: true }
+    );
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener(
+        "scroll",
+        handleScroll
+      );
     };
   }, []);
 
+  // Permite fechar o menu com Escape
   useEffect(() => {
     if (!open) return;
 
-    const handleEscape = (event: KeyboardEvent) => {
+    const handleEscape = (
+      event: KeyboardEvent
+    ) => {
       if (event.key === "Escape") {
         setOpen(false);
       }
     };
 
-    window.addEventListener("keydown", handleEscape);
+    window.addEventListener(
+      "keydown",
+      handleEscape
+    );
 
     return () => {
-      window.removeEventListener("keydown", handleEscape);
+      window.removeEventListener(
+        "keydown",
+        handleEscape
+      );
     };
   }, [open]);
 
@@ -52,7 +68,9 @@ export function Header() {
       className={[
         "header",
         "v4-header",
-        scrolled ? "header-scrolled" : "",
+        scrolled
+          ? "header-scrolled"
+          : "",
       ]
         .filter(Boolean)
         .join(" ")}
@@ -61,13 +79,13 @@ export function Header() {
         <a
           className="header-brand"
           href="#inicio"
-          aria-label="Voltar ao início — Prefeitura do Rio e Fundação João Goulart"
+          aria-label="Voltar ao início — Prefeitura do Rio"
           onClick={() => setOpen(false)}
         >
           <img
             className="logo"
-            src="/images/logo-fjg-prefeitura.png"
-            alt="Prefeitura do Rio e Fundação João Goulart"
+            src="/images/logo-pref-2025.png"
+            alt="Prefeitura do Rio"
           />
         </a>
 
@@ -76,22 +94,34 @@ export function Header() {
           className="menu-toggle"
           aria-expanded={open}
           aria-controls="mainNav"
-          aria-label={open ? "Fechar menu" : "Abrir menu"}
-          onClick={() => setOpen((value) => !value)}
+          aria-label={
+            open
+              ? "Fechar menu"
+              : "Abrir menu"
+          }
+          onClick={() =>
+            setOpen((value) => !value)
+          }
         >
           <span aria-hidden="true">
             {open ? "✕" : "☰"}
           </span>
-          <span>{open ? "Fechar" : "Menu"}</span>
+
+          <span>
+            {open ? "Fechar" : "Menu"}
+          </span>
         </button>
 
         <nav
           id="mainNav"
           aria-label="Navegação principal"
-          className={"nav" + (open ? " open" : "")}
+          className={
+            "nav" + (open ? " open" : "")
+          }
           onClick={(event) => {
             if (
-              (event.target as HTMLElement).closest("a")
+              (event.target as HTMLElement)
+                .closest("a")
             ) {
               setOpen(false);
             }
@@ -117,9 +147,14 @@ export function Header() {
             Panorama racial
           </a>
 
-          <a className="nav-btn" href="#fontes">
+          <a
+            className="nav-btn"
+            href="#fontes"
+          >
             Fontes e dados
-            <span aria-hidden="true">↗</span>
+            <span aria-hidden="true">
+              ↗
+            </span>
           </a>
         </nav>
       </div>

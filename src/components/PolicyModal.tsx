@@ -33,7 +33,7 @@ export function PolicyModal({
     ["Público atendido", policy.audience],
     ["Órgão responsável", policy.owner],
     ["Situação identificada", policy.status],
-    ["Período", policy.period],
+    ["Ano de início", policy.year],
     ["Fonte indicada no levantamento", policy.source],
   ];
   return (
@@ -53,7 +53,7 @@ export function PolicyModal({
         <div className="dialog-head">
           <div>
             <div className="eyebrow">
-              {policy.theme} · {policy.period}
+              {policy.theme} · Início: {policy.year}
             </div>
             <h2 id="modalTitle">{policy.name}</h2>
           </div>

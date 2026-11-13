@@ -44,7 +44,7 @@ export function Catalog({
             .toLocaleLowerCase("pt-BR")
             .includes(q)) &&
         (!theme || p.theme === theme) &&
-        (!year || p.years.includes(year) || p.year === year)
+        (!year || p.year === year)
     );
   }, [policies, query, theme, year]);
   return (
@@ -60,8 +60,8 @@ export function Catalog({
             </h2>
           </div>
           <p>
-            Pesquise por assunto, escolha um tema ou selecione um ano. Cada card
-            permite consultar as informações registradas na base.
+            Pesquise por assunto, escolha um tema ou filtre pelo ano de início da iniciativa.
+            Cada cartão apresenta informações registradas no levantamento a partir do ano de publicação.
           </p>
         </div>
         <div className="toolbar">
@@ -99,11 +99,11 @@ export function Catalog({
             ))}
           </select>
           <select
-            aria-label="Filtrar por ano"
+            aria-label="Filtrar por ano de início"
             value={year}
             onChange={(e) => onYear(e.target.value)}
           >
-            <option value="">Todos os anos</option>
+            <option value="">Todos os anos de início</option>
             {years.map((y) => (
               <option key={y} value={y}>
                 {y}
@@ -132,7 +132,7 @@ export function Catalog({
               <article className="policy" key={p.name + i}>
                 <div className="policy-head">
                   <span className="theme">{p.theme}</span>
-                  <span className="date">{p.year}</span>
+                  <span className="date">Início: {p.year === "A confirmar" ? "a confirmar" : p.year}</span>
                 </div>
                 <h3>{p.name}</h3>
                 <p>{p.what}</p>

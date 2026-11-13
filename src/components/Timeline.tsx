@@ -1,6 +1,10 @@
 
 import { useEffect, useRef } from "react";
-import type { CSSProperties, KeyboardEvent } from "react";
+import type {
+  CSSProperties,
+  KeyboardEvent,
+} from "react";
+
 import type { Policy } from "../types";
 
 const years = [
@@ -20,31 +24,38 @@ interface Props {
   policies: Policy[];
   selectedYear: string;
   onSelectYear: (year: string) => void;
+  onViewYear: (year: string) => void;
 }
 
 export function Timeline({
   policies,
   selectedYear,
   onSelectYear,
+  onViewYear,
 }: Props) {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const selectedIndex = years.indexOf(selectedYear);
 
+  const selectedIndex = years.indexOf(selectedYear);
   const currentIndex = Math.max(0, selectedIndex);
+
+  // Considera exclusivamente o ano de início
   const related = policies.filter(
-    (p) => p.year === selectedYear
+    (policy) => policy.year === selectedYear
   );
 
   const progress =
     (currentIndex / (years.length - 1)) * 100;
 
+  // Centraliza visualmente o ano selecionado
   useEffect(() => {
     const container = scrollRef.current;
+
     if (!container) return;
 
-    const active = container.querySelector<HTMLElement>(
-      ".timeline-year.active"
-    );
+    const active =
+      container.querySelector<HTMLElement>(
+        ".timeline-year.active"
+      );
 
     if (!active) return;
 
@@ -59,10 +70,11 @@ export function Timeline({
 
     container.scrollTo({
       left: Math.max(0, left),
-      behavior: reduced ? "instant" : "smooth",
+      behavior: reduced ? "auto" : "smooth",
     });
   }, [selectedYear]);
 
+  // Navegação das setas: altera somente a Timeline
   const navigate = (direction: number) => {
     const index = Math.min(
       years.length - 1,
@@ -72,26 +84,39 @@ export function Timeline({
     onSelectYear(years[index]);
   };
 
+  // Navegação acessível pelo teclado
   const handleKeyDown = (
     event: KeyboardEvent<HTMLButtonElement>,
     index: number
   ) => {
     let next = index;
 
-    if (event.key === "ArrowRight") next = index + 1;
-    else if (event.key === "ArrowLeft") next = index - 1;
-    else if (event.key === "Home") next = 0;
-    else if (event.key === "End") next = years.length - 1;
-    else return;
+    if (event.key === "ArrowRight") {
+      next = index + 1;
+    } else if (event.key === "ArrowLeft") {
+      next = index - 1;
+    } else if (event.key === "Home") {
+      next = 0;
+    } else if (event.key === "End") {
+      next = years.length - 1;
+    } else {
+      return;
+    }
 
     event.preventDefault();
 
-    next = Math.max(0, Math.min(years.length - 1, next));
+    next = Math.max(
+      0,
+      Math.min(years.length - 1, next)
+    );
 
+    // Não altera o filtro do catálogo
     onSelectYear(years[next]);
 
     scrollRef.current
-      ?.querySelectorAll<HTMLButtonElement>(".timeline-year")
+      ?.querySelectorAll<HTMLButtonElement>(
+        ".timeline-year"
+      )
       [next]?.focus();
   };
 
@@ -118,9 +143,11 @@ export function Timeline({
           </div>
 
           <p>
-            Explore os anos com iniciativas da Prefeitura do
-            Rio e descubra como diferentes frentes de atuação
-            foram ganhando espaço.
+            Explore as iniciativas da Prefeitura do Rio
+            pelo ano em que começaram. Selecione um ano
+            para conhecer sua trajetória e utilize o link
+            abaixo para consultar as iniciativas
+            correspondentes no catálogo.
           </p>
         </div>
 
@@ -144,7 +171,9 @@ export function Timeline({
               type="button"
               className="timeline-arrow"
               onClick={() => navigate(1)}
-              disabled={currentIndex === years.length - 1}
+              disabled={
+                currentIndex === years.length - 1
+              }
               aria-label="Próximo ano"
             >
               <span aria-hidden="true">→</span>
@@ -168,17 +197,21 @@ export function Timeline({
               role="group"
               aria-label="Selecione um ano"
             >
-              {years.map((y, index) => {
+              {years.map((year, index) => {
                 const count = policies.filter(
-                  (p) => p.year === y
+                  (policy) =>
+                    policy.year === year
                 ).length;
 
-                const active = selectedYear === y;
-                const passed = index < currentIndex;
+                const active =
+                  selectedYear === year;
+
+                const passed =
+                  index < currentIndex;
 
                 return (
                   <button
-                    key={y}
+                    key={year}
                     type="button"
                     className={[
                       "timeline-year",
@@ -188,17 +221,25 @@ export function Timeline({
                       .filter(Boolean)
                       .join(" ")}
                     aria-pressed={active}
-                    onClick={() => onSelectYear(y)}
+                    onClick={() =>
+                      onSelectYear(year)
+                    }
                     onKeyDown={(event) =>
-                      handleKeyDown(event, index)
+                      handleKeyDown(
+                        event,
+                        index
+                      )
                     }
                   >
-                    <span className="timeline-dot">
+                    <span
+                      className="timeline-dot"
+                      aria-hidden="true"
+                    >
                       <span className="timeline-dot-inner" />
                     </span>
 
                     <span className="timeline-year-number">
-                      {y}
+                      {year}
                     </span>
 
                     <span className="timeline-year-count">
@@ -222,7 +263,7 @@ export function Timeline({
         >
           <div className="timeline-detail-content">
             <span className="timeline-detail-eyebrow">
-              ANO SELECIONADO / {selectedYear}
+              ANO DE INÍCIO / {selectedYear}
             </span>
 
             <div className="timeline-detail-main">
@@ -256,9 +297,13 @@ export function Timeline({
             </div>
           </div>
 
+          {/* Somente este link ativa o filtro */}
           <a
             className="timeline-detail-link"
             href="#iniciativas"
+            onClick={() =>
+              onViewYear(selectedYear)
+            }
           >
             Ver iniciativas deste ano
             <span aria-hidden="true">↗</span>
@@ -267,9 +312,15 @@ export function Timeline({
 
         <div className="timeline-bottom">
           <span>
-            {String(currentIndex + 1).padStart(2, "0")}
+            {String(currentIndex + 1).padStart(
+              2,
+              "0"
+            )}
             {" / "}
-            {String(years.length).padStart(2, "0")}
+            {String(years.length).padStart(
+              2,
+              "0"
+            )}
           </span>
 
           <span>
