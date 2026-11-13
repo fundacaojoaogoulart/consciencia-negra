@@ -45,7 +45,7 @@ export function StorySection() {
         </div>
 
         <div className="story-copy reveal">
-          <span className="eyebrow">01 / Memória e pertencimento</span>
+          <span className="eyebrow">01 / História e pertencimento</span>
           <h2 id="heritageTitle">
             Do pionerismo ao futuro: <em>uma reparação histórica.</em>
           </h2>

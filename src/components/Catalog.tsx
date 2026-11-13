@@ -52,7 +52,7 @@ export function Catalog({
       <div className="container">
         <div className="section-heading">
           <div>
-            <div className="eyebrow">05 / Explore o levantamento</div>
+            <div className="eyebrow">04 / Explore o levantamento</div>
             <h2>
               Políticas e iniciativas
               <br />
