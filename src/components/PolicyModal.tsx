@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import type { Policy } from "../types";
+
 export function PolicyModal({
   policy,
   onClose,
@@ -8,12 +9,16 @@ export function PolicyModal({
   onClose: () => void;
 }) {
   const closeRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     if (!policy) return;
+
     const previous = document.activeElement as HTMLElement | null;
     const oldOverflow = document.body.style.overflow;
+
     document.body.style.overflow = "hidden";
     closeRef.current?.focus();
+
     const key = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
       if (e.key === "Tab") {
@@ -21,14 +26,18 @@ export function PolicyModal({
         closeRef.current?.focus();
       }
     };
+
     window.addEventListener("keydown", key);
+
     return () => {
       window.removeEventListener("keydown", key);
       document.body.style.overflow = oldOverflow;
       previous?.focus();
     };
   }, [policy, onClose]);
+
   if (!policy) return null;
+
   const meta = [
     ["Público atendido", policy.audience],
     ["Órgão responsável", policy.owner],
@@ -36,6 +45,7 @@ export function PolicyModal({
     ["Ano de início", policy.year],
     ["Fonte indicada no levantamento", policy.source],
   ];
+
   return (
     <div
       className="modal open"

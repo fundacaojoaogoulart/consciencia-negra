@@ -217,9 +217,52 @@ export default function App() {
       <Header />
 
       <main id="conteudo">
-        <HeroSection />
+        
+        
+<HeroSection />
 
-        <StaticSection section="stats" />
+<section
+  className="manifesto manifesto-fjg-quote manifesto-prefeito"
+  aria-label="Mensagem do prefeito Eduardo Cavaliere"
+>
+  <div
+    className="manifesto-pattern"
+    aria-hidden="true"
+  />
+
+  <div className="container manifesto-inner reveal">
+    <span className="manifesto-eyebrow">
+      MEMÓRIA · RECONHECIMENTO · DIREITOS
+    </span>
+
+    <blockquote className="manifesto-quote">
+      <p>
+        “A história negra construiu o Rio.
+      </p>
+
+      <p className="manifesto-quote-emphasis">
+        Cabe à Prefeitura honrar essa história
+        com reconhecimento, direitos e
+        oportunidades.”
+      </p>
+    </blockquote>
+
+    <div className="manifesto-quote-signature">
+      <span
+        className="manifesto-quote-rule"
+        aria-hidden="true"
+      />
+
+      <p>
+        <strong>Eduardo Cavaliere</strong>
+        <span>Prefeito da Cidade do Rio de Janeiro</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<StaticSection section="stats" />
+
 
         <StorySection />
 
