@@ -84,7 +84,7 @@ export function Header() {
         >
           <img
             className="logo"
-            src="/images/logo-pref-2025.png"
+            src="/images/logo-fjg-prefeitura-branca.png"
             alt="Prefeitura do Rio"
           />
         </a>
