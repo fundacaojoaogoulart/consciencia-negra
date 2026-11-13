@@ -38,6 +38,35 @@ const territoryBars = [
   { region: "Complexo do Alemão", value: 72.0 },
   { region: "Jacarezinho", value: 70.4 },
   { region: "Santa Cruz", value: 69.8 },
+  { region: "Pavuna", value: 68.6 },
+  { region: "Maré", value: 67.2 },
+  { region: "Bangu", value: 65.3 },
+  { region: "Guaratiba", value: 65.2 },
+  { region: "Anchieta", value: 65.1 },
+  { region: "Vigário Geral", value: 64.7 },
+  { region: "Rocinha", value: 63.7 },
+  { region: "Campo Grande", value: 63.3 },
+  { region: "Portuária", value: 63.0 },
+  { region: "Realengo", value: 62.3 },
+  { region: "São Cristóvão", value: 61.7 },
+  { region: "Madureira", value: 60.5 },
+  { region: "Rio Comprido", value: 58.8 },
+  { region: "Inhaúma", value: 57.1 },
+  { region: "Penha", value: 56.9 },
+  { region: "Ramos", value: 56.1 },
+  { region: "Santa Teresa", value: 54.8 },
+  { region: "Irajá", value: 53.6 },
+  { region: "Jacarepaguá", value: 51.9 },
+  { region: "Paquetá", value: 51.3 },
+  { region: "Ilha do Governador", value: 49.3 },
+  { region: "Méier", value: 48.1 },
+  { region: "Centro", value: 46.9 },
+  { region: "Vila Isabel", value: 35.5 },
+  { region: "Barra da Tijuca", value: 34.8 },
+  { region: "Tijuca", value: 31.9 },
+  { region: "Copacabana", value: 27.5 },
+  { region: "Botafogo", value: 25.7 },
+  { region: "Lagoa", value: 21.3 },
 ];
 
 const sourceLinks = [
@@ -63,36 +92,106 @@ const sourceLinks = [
   },
 ];
 
+/** Anima o valor apenas quando o usuário realmente o vê na tela. */
 function useCountUp(
   target: number,
   start: boolean,
   decimals = 0,
-  duration = 1100
+  duration = 1250
 ) {
   const [count, setCount] = useState(0);
+
   useEffect(() => {
     if (!start) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+
+    const reduced =
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      document.body.classList.contains("motion-off");
+
+    if (reduced) {
       setCount(target);
       return;
     }
-    let frame = 0;
+
     let raf = 0;
-    const totalFrames = Math.max(1, Math.round(duration / 16));
-    const animate = () => {
-      frame += 1;
-      const progress = Math.min(1, frame / totalFrames);
-      setCount(target * (1 - Math.pow(1 - progress, 3)));
-      if (progress < 1) raf = requestAnimationFrame(animate);
-      else setCount(target);
+    let startedAt: number | null = null;
+
+    const frame = (now: number) => {
+      if (startedAt === null) startedAt = now;
+      const progress = Math.min(1, (now - startedAt) / duration);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(progress === 1 ? target : target * eased);
+
+      if (progress < 1) raf = window.requestAnimationFrame(frame);
     };
-    raf = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(raf);
+
+    raf = window.requestAnimationFrame(frame);
+    return () => window.cancelAnimationFrame(raf);
   }, [target, start, duration]);
+
   return count.toLocaleString("pt-BR", {
     minimumFractionDigits: decimals,
     maximumFractionDigits: decimals,
   });
+}
+
+type AnimatedNumberProps = {
+  value: number;
+  decimals?: number;
+  prefix?: string;
+  suffix?: string;
+};
+
+/** A leitura por tecnologias assistivas permanece no valor final, sem anunciar cada quadro. */
+function AnimatedNumber({
+  value,
+  decimals = 0,
+  prefix = "",
+  suffix = "",
+}: AnimatedNumberProps) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const [visible, setVisible] = useState(false);
+  const counted = useCountUp(value, visible, decimals);
+  const finalText =
+    prefix +
+    value.toLocaleString("pt-BR", {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals,
+    }) +
+    suffix;
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+    if (!("IntersectionObserver" in window)) {
+      setVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -12px 0px" }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <span className="data-animated-number" ref={ref}>
+      <span aria-hidden="true">
+        {prefix}
+        {counted}
+        {suffix}
+      </span>
+      <span className="data-number-sr-only">{finalText}</span>
+    </span>
+  );
 }
 
 function StatCard({
@@ -101,47 +200,92 @@ function StatCard({
   decimals = 0,
   suffix = "",
   note,
-  start,
-}: HeroStat & { start: boolean }) {
-  const counted = useCountUp(value, start, decimals);
+}: HeroStat) {
   return (
     <article className="data-stat-card reveal">
       <span className="data-stat-label">{label}</span>
       <strong className="data-stat-value">
-        {counted}
-        {suffix}
+        <AnimatedNumber value={value} decimals={decimals} suffix={suffix} />
       </strong>
       <p className="data-stat-note">{note}</p>
     </article>
   );
 }
 
-export function DataFactsSection() {
-  const [activeTab, setActiveTab] = useState<TabKey>("population");
-  const [startCount, setStartCount] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
+/** Cada barra é ativada ao entrar na área visível da lista rolável. */
+function TerritoryBar({ region, value }: { region: string; value: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const target = sectionRef.current;
-    if (!target) return;
+    const node = ref.current;
+    if (!node) return;
+    if (!("IntersectionObserver" in window)) {
+      setVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setStartCount(true);
+          setVisible(true);
           observer.disconnect();
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.25 }
     );
-    observer.observe(target);
+
+    observer.observe(node);
     return () => observer.disconnect();
   }, []);
 
   return (
+    <div className="territory-bar-item" ref={ref}>
+      <div className="territory-bar-head">
+        <span>{region}</span>
+        <strong>
+          <AnimatedNumber value={value} decimals={1} suffix="%" />
+        </strong>
+      </div>
+      <div
+        className="territory-bar-track"
+        role="img"
+        aria-label={`${region}: ${value.toLocaleString("pt-BR", {
+          minimumFractionDigits: 1,
+          maximumFractionDigits: 1,
+        })}% de moradores negros`}
+      >
+        <div
+          className="territory-bar-fill"
+          aria-hidden="true"
+          style={{ width: visible ? `${value}%` : "0%" }}
+        />
+      </div>
+    </div>
+  );
+}
+
+function TerritoryBars() {
+  return (
+    <div
+      className="territory-bars territory-bars-scroll"
+      role="region"
+      aria-label="Lista rolável das 33 Regiões Administrativas e percentuais de moradores negros"
+      tabIndex={0}
+    >
+      {territoryBars.map((item) => (
+        <TerritoryBar key={item.region} {...item} />
+      ))}
+    </div>
+  );
+}
+
+export function DataFactsSection() {
+  const [activeTab, setActiveTab] = useState<TabKey>("population");
+  return (
     <section
       className="data-facts section"
       id="dados-raciais"
-      ref={sectionRef}
       aria-labelledby="dataFactsTitle"
     >
       <div className="container">
@@ -159,7 +303,7 @@ export function DataFactsSection() {
 
         <div className="data-stat-grid">
           {heroStats.map((item) => (
-            <StatCard key={item.label} {...item} start={startCount} />
+            <StatCard key={item.label} {...item} />
           ))}
         </div>
 
@@ -195,7 +339,8 @@ export function DataFactsSection() {
             </button>
           </div>
 
-          <div className="data-panel-body">
+          <div className="data-panel-body" aria-live="off">
+            <div key={activeTab} className="data-tab-content">
             {activeTab === "population" && (
               <div className="data-tab-grid">
                 <div className="data-feature-card">
@@ -222,7 +367,7 @@ export function DataFactsSection() {
                 <div className="data-side-stack">
                   <article className="mini-insight">
                     <span className="mini-insight-title">Mulheres negras</span>
-                    <strong>1,77 milhão</strong>
+                    <strong><AnimatedNumber value={1.77} decimals={2} suffix=" milhão" /></strong>
                     <p>
                       Cerca de 52,4% da população negra carioca é composta por
                       mulheres.
@@ -230,7 +375,7 @@ export function DataFactsSection() {
                   </article>
                   <article className="mini-insight">
                     <span className="mini-insight-title">Juventude negra</span>
-                    <strong>59,3%</strong>
+                    <strong><AnimatedNumber value={59.3} decimals={1} suffix="%" /></strong>
                     <p>
                       Dos jovens de 15 a 29 anos da cidade são negros,
                       aproximadamente 750 mil pessoas.
@@ -244,36 +389,17 @@ export function DataFactsSection() {
               <div className="data-tab-grid territory-layout">
                 <div className="data-feature-card">
                   <span className="data-kicker">
-                    Regiões Administrativas com maior proporção de moradores
-                    negros
+                    Proporção de moradores negros por Região Administrativa
                   </span>
-                  <div className="territory-bars">
-                    {territoryBars.map((item) => (
-                      <div className="territory-bar-item" key={item.region}>
-                        <div className="territory-bar-head">
-                          <span>{item.region}</span>
-                          <strong>
-                            {item.value.toLocaleString("pt-BR", {
-                              minimumFractionDigits: 1,
-                              maximumFractionDigits: 1,
-                            })}
-                            %
-                          </strong>
-                        </div>
-                        <div className="territory-bar-track">
-                          <div
-                            className="territory-bar-fill"
-                            style={{ width: `${item.value}%` }}
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                  <p className="territory-scroll-hint">
+                    33 regiões · da maior para a menor proporção. Role a lista para ver todas.
+                  </p>
+                  <TerritoryBars />
                 </div>
                 <div className="data-side-stack">
                   <article className="mini-insight">
                     <span className="mini-insight-title">Maioria negra</span>
-                    <strong>24 de 33 RAs</strong>
+                    <strong><AnimatedNumber value={24} /> de 33 RAs</strong>
                     <p>
                       A população negra é maioria em 24 das 33 Regiões
                       Administrativas.
@@ -281,7 +407,7 @@ export function DataFactsSection() {
                   </article>
                   <article className="mini-insight">
                     <span className="mini-insight-title">Campo Grande</span>
-                    <strong>380.354 moradores</strong>
+                    <strong><AnimatedNumber value={380354} suffix=" moradores" /></strong>
                     <p>
                       Maior contingente de moradores negros em números
                       absolutos.
@@ -289,7 +415,7 @@ export function DataFactsSection() {
                   </article>
                   <article className="mini-insight">
                     <span className="mini-insight-title">Lagoa</span>
-                    <strong>21,3%</strong>
+                    <strong><AnimatedNumber value={21.3} decimals={1} suffix="%" /></strong>
                     <p>
                       Menor proporção de moradores negros entre as Regiões
                       Administrativas da cidade.
@@ -308,11 +434,11 @@ export function DataFactsSection() {
                   <div className="compare-values">
                     <div>
                       <small>Pessoas negras</small>
-                      <strong>R$ 2,3 mil</strong>
+                      <strong><AnimatedNumber value={2.3} decimals={1} prefix="R$ " suffix=" mil" /></strong>
                     </div>
                     <div>
                       <small>Pessoas brancas</small>
-                      <strong>R$ 4,4 mil</strong>
+                      <strong><AnimatedNumber value={4.4} decimals={1} prefix="R$ " suffix=" mil" /></strong>
                     </div>
                   </div>
                   <p>
@@ -328,11 +454,11 @@ export function DataFactsSection() {
                   <div className="compare-values">
                     <div>
                       <small>Crescimento de ocupados negros</small>
-                      <strong>27,2%</strong>
+                      <strong><AnimatedNumber value={27.2} decimals={1} suffix="%" /></strong>
                     </div>
                     <div>
                       <small>Crescimento de ocupados brancos</small>
-                      <strong>17,4%</strong>
+                      <strong><AnimatedNumber value={17.4} decimals={1} suffix="%" /></strong>
                     </div>
                   </div>
                   <p>
@@ -372,6 +498,7 @@ export function DataFactsSection() {
                 </div>
               </div>
             )}
+            </div>
           </div>
         </div>
 
