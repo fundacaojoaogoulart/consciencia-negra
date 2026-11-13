@@ -20,9 +20,9 @@ export function HeroSection() {
           </div>
 
           <h1 id="hero-title">
-            Memória que inspira.
+            Políticas que transformam 
             <br />
-            <em>Políticas que transformam.</em>
+            <em>criam um futuro ancestral.</em>
           </h1>
 
           <p className="hero-desc">
