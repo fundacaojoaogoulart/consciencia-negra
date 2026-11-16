@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from "react";
 import type { Policy } from "../types";
 
@@ -41,9 +42,7 @@ export function PolicyModal({
   const meta = [
     ["Público atendido", policy.audience],
     ["Órgão responsável", policy.owner],
-    ["Situação identificada", policy.status],
     ["Ano de início", policy.year],
-    ["Fonte indicada no levantamento", policy.source],
   ];
 
   return (
@@ -65,8 +64,10 @@ export function PolicyModal({
             <div className="eyebrow">
               {policy.theme} · Início: {policy.year}
             </div>
+
             <h2 id="modalTitle">{policy.name}</h2>
           </div>
+
           <button
             ref={closeRef}
             className="close"
@@ -77,7 +78,9 @@ export function PolicyModal({
             ×
           </button>
         </div>
+
         <p>{policy.what}</p>
+
         <dl className="meta">
           {meta.map(([k, v]) => (
             <div key={k}>
@@ -86,10 +89,6 @@ export function PolicyModal({
             </div>
           ))}
         </dl>
-        <div className="notice">
-          Descrição e situação reproduzidas do levantamento-base. Recomenda-se
-          conferir as fontes oficiais antes da publicação.
-        </div>
       </div>
     </div>
   );
