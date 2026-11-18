@@ -429,43 +429,75 @@ export function DataFactsSection() {
               <div className="data-tab-grid inequality-layout">
                 <div className="compare-card">
                   <span className="data-kicker">
-                    Renda domiciliar mensal por pessoa · 2024
+                    Renda domiciliar per capita · 2025
                   </span>
                   <div className="compare-values">
                     <div>
                       <small>Pessoas negras</small>
-                      <strong><AnimatedNumber value={2.3} decimals={1} prefix="R$ " suffix=" mil" /></strong>
+                      <strong><AnimatedNumber value={2570} prefix="R$ " /></strong>
                     </div>
                     <div>
                       <small>Pessoas brancas</small>
-                      <strong><AnimatedNumber value={4.4} decimals={1} prefix="R$ " suffix=" mil" /></strong>
+                      <strong><AnimatedNumber value={5035} prefix="R$ " /></strong>
                     </div>
                   </div>
                   <p>
-                    Entre 2021 e 2024, descontada a inflação, a renda cresceu{" "}
-                    <strong>17,2%</strong> entre pessoas negras e{" "}
-                    <strong>10,5%</strong> entre pessoas brancas.
+                    Entre 2021 e 2025, a renda per capita cresceu <strong>39,3%</strong>{" "}
+                    entre pessoas negras e <strong>25,4%</strong> entre pessoas brancas.
+                    Em 2025, a renda de pessoas brancas era <strong>95,9% maior</strong>.
+                  </p>
+                  <p>
+                    A renda per capita das pessoas negras cariocas foi
+                    <strong> 53,8% maior</strong> que a média nacional da população
+                    negra (<strong>R$ 1.671</strong>) em 2025.
                   </p>
                 </div>
                 <div className="compare-card">
                   <span className="data-kicker">
-                    Mercado de trabalho · 2021–2024
+                    Mercado de trabalho · primeiros semestres de 2021 e 2026
                   </span>
                   <div className="compare-values">
                     <div>
-                      <small>Crescimento de ocupados negros</small>
-                      <strong><AnimatedNumber value={27.2} decimals={1} suffix="%" /></strong>
+                      <small>Pessoas negras ocupadas · 2026</small>
+                      <strong><AnimatedNumber value={1.8} decimals={1} suffix=" milhão" /></strong>
                     </div>
                     <div>
-                      <small>Crescimento de ocupados brancos</small>
-                      <strong><AnimatedNumber value={17.4} decimals={1} suffix="%" /></strong>
+                      <small>Crescimento da ocupação negra</small>
+                      <strong><AnimatedNumber value={43.1} decimals={1} suffix="%" /></strong>
                     </div>
                   </div>
                   <p>
-                    Em 2024, a taxa de desemprego foi de <strong>8,9%</strong>{" "}
-                    entre pessoas negras e <strong>7,1%</strong> entre pessoas
-                    brancas.
+                    Em 2026, pessoas negras representavam <strong>54,2%</strong> dos ocupados
+                    no Rio. Eram <strong>549,3 mil</strong> pessoas negras ocupadas a mais
+                    que no primeiro semestre de 2021.
                   </p>
+                </div>
+                <div className="data-feature-card full-span">
+                  <span className="data-kicker">
+                    Desocupação da população negra · primeiros semestres de 2021 e 2026
+                  </span>
+                  <ul className="data-bullet-list">
+                    <li>
+                      A taxa média de desocupação caiu de <strong>18,5%</strong> para{" "}
+                      <strong>7,0%</strong>, uma redução de <strong>11,5 pontos percentuais</strong>.
+                    </li>
+                    <li>
+                      O número de pessoas negras desocupadas diminuiu em <strong>150,8 mil</strong>.
+                    </li>
+                  </ul>
+                </div>
+                <div className="data-feature-card full-span">
+                  <span className="data-kicker">Educação · pessoas com 25 anos ou mais · 2025</span>
+                  <ul className="data-bullet-list">
+                    <li>
+                      No Rio, <strong>43,0%</strong> das pessoas negras e <strong>33,9%</strong>
+                      das pessoas brancas tinham ensino médio completo, sem superior concluído.
+                    </li>
+                    <li>
+                      <strong>23,6%</strong> das pessoas negras cariocas tinham ensino superior
+                      completo, ante <strong>14,5%</strong> das pessoas negras no Brasil.
+                    </li>
+                  </ul>
                 </div>
                 <div className="data-feature-card full-span">
                   <span className="data-kicker">
@@ -503,8 +535,12 @@ export function DataFactsSection() {
         </div>
 
         <div className="data-disclaimer">
-          <strong>Fontes e metodologia:</strong> dados de diferentes
-          levantamentos e períodos. Consulte as publicações originais:{" "}
+          <strong>Fontes e metodologia:</strong> IBGE — PNAD Contínua Trimestral
+          (mercado de trabalho, primeiros semestres de 2021 e 2026) e PNAD
+          Contínua Anual (renda e escolaridade, 2025), em compilação da SMDE
+          e da FJG encaminhada pela CDC em novembro de 2026. Demais indicadores:
+          Censo Demográfico 2022 e levantamentos institucionais específicos.
+          Consulte também as publicações originais:{" "}
           {sourceLinks.map((source, index) => (
             <span key={source.href}>
               {index > 0 ? " · " : ""}

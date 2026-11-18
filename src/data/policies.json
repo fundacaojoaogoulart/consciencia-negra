@@ -544,12 +544,12 @@
   },
   {
     "name": "Centro Cultural Rio-Áfricas",
-    "audience": "Comunidade e visitantes",
+    "audience": "Comunidade, população carioca, pesquisadores e visitantes",
     "period": "Paes — 2025; Cavaliere — 2026",
-    "what": "Prevê equipamento de memória e cultura afro-diaspórica na Pequena África.",
-    "status": "Demolição em 2025 e construção iniciada em 2026",
-    "source": "Prefeitura",
-    "owner": "Companhia Carioca de Parcerias e Investimentos (CCPar) e Secretaria Municipal de Cultura (SMC)",
+    "what": "Implantação de centro cultural na Pequena África, próximo ao Cais do Valongo, dedicado à ancestralidade afro-diaspórica, com exposições, mostras, formação artística e atividades culturais e educativas.",
+    "status": "Intervenções anunciadas em novembro de 2025; obras do prédio iniciadas em 31 de julho de 2026.",
+    "source": "https://prefeitura.rio/ccpar/prefeito-eduardo-cavaliere-inicia-obras-do-centro-cultural-rio-africas-na-pequena-africa/",
+    "owner": "Companhia Carioca de Parcerias e Investimentos (CCPar) / Secretaria Municipal de Cultura (SMC), em parceria com o IAB-RJ no concurso arquitetônico",
     "years": [
       "2025",
       "2026"
@@ -560,15 +560,15 @@
   {
     "name": "Concurso de arquitetura do Centro Cultural Rio-Áfricas",
     "audience": "Arquitetos negros brasileiros e africanos lusófonos",
-    "period": "Paes — documentado em 2025",
+    "period": "Paes — 2024",
     "what": "Seleciona o projeto arquitetônico do equipamento com valorização da autoria negra.",
-    "status": "Projeto vencedor selecionado",
-    "source": "Prefeitura",
+    "status": "Concurso lançado em 2024; projeto vencedor selecionado em outubro de 2024.",
+    "source": "https://prefeitura.rio/ccpar/prefeitura-anuncia-vencedor-do-concurso-para-projeto-do-centro-cultural-rio-africa/",
     "owner": "Companhia Carioca de Parcerias e Investimentos (CCPar); parceria com o IAB-RJ",
     "years": [
-      "2025"
+      "2024"
     ],
-    "year": "2025",
+    "year": "2024",
     "theme": "Cultura e memória"
   },
   {
@@ -708,5 +708,35 @@
     ],
     "year": "2021",
     "theme": "Gestão e oportunidades"
+  },
+  {
+    "name": "Território Inventivo — Pequena África",
+    "audience": "Comunidade da Pequena África, moradores, pesquisadores, estudantes e visitantes",
+    "period": "Paes — 2023; lançamento da plataforma em 2024",
+    "what": "Realiza diagnóstico sociocultural e reúne, em plataforma digital de memória e tecnologia, informações históricas e culturais sobre a Pequena África, valorizando personagens, lugares, manifestações culturais e a herança africana no Rio de Janeiro.",
+    "status": "Termo de fomento firmado em 2023; plataforma e livro lançados em novembro de 2024.",
+    "source": "https://territoriosinventivos.rio.br/",
+    "owner": "Secretaria Municipal da Casa Civil (CVL) / Coordenadoria de Promoção da Igualdade Racial (CPIR), em parceria com o Circo Crescer e Viver",
+    "years": [
+      "2023",
+      "2024"
+    ],
+    "year": "2023",
+    "theme": "Cultura e memória"
+  },
+  {
+    "name": "Assessoria Especial da Saúde da População Negra",
+    "audience": "População negra carioca e profissionais da rede municipal de saúde",
+    "period": "Paes — estruturação em 2024; previsão da assessoria em 2025",
+    "what": "Estrutura técnica voltada à implementação, ao monitoramento e à avaliação do Programa Municipal de Saúde Integral para a População Negra, promovendo equidade racial no SUS, qualificação da atenção à saúde e enfrentamento do racismo institucional.",
+    "status": "Grupo Gestor Especial instituído pela Resolução SMS nº 6.028/2024; Assessoria Técnica Especial contemplada nas metas orçamentárias de 2025.",
+    "source": "https://saude.prefeitura.rio/populacao-negra/",
+    "owner": "Secretaria Municipal de Saúde (SMS) / Gabinete do Secretário Municipal de Saúde",
+    "years": [
+      "2024",
+      "2025"
+    ],
+    "year": "2024",
+    "theme": "Saúde"
   }
 ]
