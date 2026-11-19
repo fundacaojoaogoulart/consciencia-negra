@@ -10,7 +10,7 @@ export function StorySection() {
           <div className="story-photo">
             {!failed && (
               <img
-                src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Pedra%20do%20Sal%20-%20Rio%20de%20Janeiro%20-%2020240914095516.jpg"
+                src="/images/pedra-do-sal-historia.jpg"
                 alt="Pedra do Sal, território histórico de memória afro-carioca no Rio de Janeiro"
                 loading="lazy"
                 onError={() => setFailed(true)}
@@ -26,21 +26,12 @@ export function StorySection() {
           <div className="story-photo-credit">
             Pedra do Sal ·{" "}
             <a
-              href="https://commons.wikimedia.org/wiki/File:Pedra_do_Sal_-_Rio_de_Janeiro_-_20240914095516.jpg"
+              href="https://www.flickr.com/photos/riotur/8700896189/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Gabibzz
-            </a>{" "}
-            ·{" "}
-            <a
-              href="https://creativecommons.org/licenses/by-sa/4.0/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              CC BY-SA 4.0
-            </a>{" "}
-            · foto adaptada
+              Alexandre Macieira / Riotur
+            </a>
           </div>
         </div>
 

@@ -335,7 +335,7 @@ export function DataFactsSection() {
               aria-pressed={activeTab === "inequality"}
               onClick={() => setActiveTab("inequality")}
             >
-              Desigualdades
+              Panorama
             </button>
           </div>
 

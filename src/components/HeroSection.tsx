@@ -20,7 +20,7 @@ export function HeroSection() {
           </div>
 
           <h1 id="hero-title">
-            Políticas que transformam 
+            Políticas que transformam
             <br />
             <em>criam um futuro ancestral.</em>
           </h1>
@@ -56,7 +56,7 @@ export function HeroSection() {
             {!failed && (
               <img
                 className="v5-hero-photo"
-                src="/images/pedra-do-sal-hero.jpg"
+                src="/images/pedra-do-sal-riotur.jpg"
                 alt="Pedra do Sal, espaço histórico de memória e cultura afro-brasileira na região da Pequena África, Rio de Janeiro"
                 onError={() => setFailed(true)}
               />
@@ -86,15 +86,14 @@ export function HeroSection() {
           </div>
 
           <p className="v5-hero-credit">
-            Imagem documental:{" "}
+            Foto:{" "}
             <a
-              href="https://www.flickr.com/photos/leonardomartins/7571541304/in/photolist-JskcX8-2oRNdrM-cyExVm-cx58rA-cyEvb3-2gCTU4V-2gCTNWR-2gCTcNy-2pu7p15-2gCTUyT-2gCTSXM-2gCT7Ht-2gCTPi2-dgEU4u-ikJqia-vBRj5v-cquyMf-ikJr3Y-cquy45-cquym5-2pxuz4E-nbSKes-qv1PFz-2oLSUHU-cquyA7"
+              href="https://www.flickr.com/photos/riotur/52459776742/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Flicky
-            </a>{" "}
-            · Cais do Valongo
+              Thiago Lara / Riotur
+            </a>
           </p>
         </div>
       </div>

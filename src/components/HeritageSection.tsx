@@ -20,7 +20,7 @@ const stories: Story[] = [
     description:
       "Iniciativas que reconhecem a herança africana, preservam o patrimônio afro-brasileiro e valorizam as manifestações culturais e os territórios negros da cidade.",
     location: "CULTURA · MEMÓRIA · IDENTIDADE",
-    photo: "/images/historias.png",
+    photo: "/images/historias-riotur.jpg",
     alt: "Mural de arte urbana com representações de mulheres negras",
   },
   {
@@ -31,7 +31,7 @@ const stories: Story[] = [
     description:
       "Políticas e ações que promovem a equidade racial no acesso à saúde, à educação, ao trabalho, à proteção e às oportunidades.",
     location: "DIREITOS · PROTEÇÃO · EQUIDADE",
-    photo: "/images/maos.png",
+    photo: "/images/direitos-riotur.jpg",
     alt: "Mãos cruzadas em um gesto simbólico de união e proteção",
   },
   {
@@ -42,7 +42,7 @@ const stories: Story[] = [
     description:
       "Iniciativas que estimulam a participação social, valorizam lideranças negras e promovem práticas antirracistas nas instituições públicas.",
     location: "REPRESENTATIVIDADE · RESISTÊNCIA",
-    photo: "/images/resistencia.png",
+    photo: "/images/representatividade-riotur.jpg",
     alt: "Retrato em preto e branco de uma mulher negra com tranças",
   },
 ];

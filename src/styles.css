@@ -2242,19 +2242,26 @@ body {
   pointer-events: none;
 }
 
+
 .story-image-caption {
   position: absolute;
   left: 44px;
   bottom: 48px;
-  font: 400 clamp(30px, 3.4vw, 48px) / 1.14 Georgia, serif;
+  font-family: "Cera Pro", Arial, sans-serif;
+  font-size: clamp(30px, 3.4vw, 48px);
+  font-weight: 400;
+  line-height: 1.14;
   color: #fff;
   max-width: 390px;
   text-shadow: 0 2px 25px #0715245c;
 }
 
 .story-image-caption em {
+  font-family: inherit;
+  font-style: italic;
   color: #f0c88f;
 }
+
 
 .story-photo-credit {
   padding-top: 10px;
@@ -5148,6 +5155,7 @@ body.motion-off .data-facts .compare-card { transition: none !important; }
 }
 
 
+
 /* FJG — Cartão da linha do tempo compacto em telas pequenas. */
 @media (max-width: 720px) {
   .timeline-editorial .timeline-detail-card {
@@ -5163,9 +5171,7 @@ body.motion-off .data-facts .compare-card { transition: none !important; }
   }
 
   .timeline-editorial .timeline-detail-content {
-    flex: 0 0 auto;
-    width: 100%;
-    min-width: 0;
+    /* Mantenha aqui as propriedades originais deste bloco. */
   }
 
   .timeline-editorial .timeline-detail-main {
@@ -5182,3 +5188,15 @@ body.motion-off .data-facts .compare-card { transition: none !important; }
     margin-top: 0;
   }
 }
+
+/* Padronização Cera Pro */
+html,
+body {
+  font-family: "Cera Pro", Arial, sans-serif;
+}
+
+body,
+body *:not(svg):not(svg *) {
+  font-family: "Cera Pro", Arial, sans-serif;
+}
+
