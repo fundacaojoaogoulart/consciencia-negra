@@ -10,6 +10,7 @@ export function PolicyModal({
   onClose: () => void;
 }) {
   const closeRef = useRef<HTMLButtonElement>(null);
+  const linkRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     if (!policy) return;
@@ -21,10 +22,30 @@ export function PolicyModal({
     closeRef.current?.focus();
 
     const key = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-      if (e.key === "Tab") {
+      if (e.key === "Escape") {
         e.preventDefault();
-        closeRef.current?.focus();
+        onClose();
+      }
+
+      if (e.key === "Tab") {
+        const elements = [
+          closeRef.current,
+          linkRef.current,
+        ].filter(
+          (el): el is HTMLButtonElement | HTMLAnchorElement =>
+            el !== null
+        );
+
+        const first = elements[0];
+        const last = elements[elements.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last?.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first?.focus();
+        }
       }
     };
 
@@ -89,6 +110,18 @@ export function PolicyModal({
             </div>
           ))}
         </dl>
+
+        {policy.repertorioUrl && (
+          <a
+            ref={linkRef}
+            className="repertorio-link"
+            href={policy.repertorioUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Conheça o projeto no RepertóRIO ↗
+          </a>
+        )}
       </div>
     </div>
   );
