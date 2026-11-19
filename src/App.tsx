@@ -1,4 +1,3 @@
-
 import { useCallback, useEffect, useState } from "react";
 
 import policiesRaw from "./data/policies.json";
@@ -13,6 +12,7 @@ import { Timeline } from "./components/Timeline";
 import { Catalog } from "./components/Catalog";
 import { PolicyModal } from "./components/PolicyModal";
 import { DataFactsSection } from "./components/DataFactsSection";
+import { PrivacyCookies } from "./components/PrivacyCookies";
 
 const policies = policiesRaw as Policy[];
 
@@ -35,9 +35,7 @@ export default function App() {
 
   // Preferência de movimento
   const [reduced, setReduced] = useState(
-    () => window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches
+    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches
   );
 
   // Indicador de progresso da página
@@ -71,9 +69,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    );
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     const handleChange = (event: MediaQueryListEvent) => {
       setReduced(event.matches);
@@ -96,29 +92,17 @@ export default function App() {
 
   useEffect(() => {
     const onScroll = () => {
-      const max =
-        document.documentElement.scrollHeight -
-        window.innerHeight;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
 
-      setProgress(
-        max > 0
-          ? Math.min(100, (100 * window.scrollY) / max)
-          : 0
-      );
+      setProgress(max > 0 ? Math.min(100, (100 * window.scrollY) / max) : 0);
 
-      const art = document.querySelector<HTMLElement>(
-        ".hero-art"
-      );
+      const art = document.querySelector<HTMLElement>(".hero-art");
 
-      const hero = document.querySelector<HTMLElement>(
-        ".hero"
-      );
+      const hero = document.querySelector<HTMLElement>(".hero");
 
       if (art) {
         art.style.transform =
-          !reduced &&
-          hero &&
-          window.scrollY < hero.offsetHeight + 100
+          !reduced && hero && window.scrollY < hero.offsetHeight + 100
             ? `translate3d(
                 0,
                 ${Math.min(window.scrollY * 0.08, 58)}px,
@@ -160,9 +144,7 @@ export default function App() {
 
     const watch = () => {
       document
-        .querySelectorAll<HTMLElement>(
-          ".reveal:not(.is-visible)"
-        )
+        .querySelectorAll<HTMLElement>(".reveal:not(.is-visible)")
         .forEach((el) => {
           if (reduced) {
             el.classList.add("is-visible");
@@ -175,15 +157,15 @@ export default function App() {
     document
       .querySelectorAll(
         ".heritage-intro," +
-        ".heritage-tile," +
-        ".manifesto-inner," +
-        ".section-heading," +
-        ".story-grid > *," +
-        ".stats-grid .stat," +
-        ".closing .container," +
-        ".data-facts-header," +
-        ".data-stat-card," +
-        ".data-panel"
+          ".heritage-tile," +
+          ".manifesto-inner," +
+          ".section-heading," +
+          ".story-grid > *," +
+          ".stats-grid .stat," +
+          ".closing .container," +
+          ".data-facts-header," +
+          ".data-stat-card," +
+          ".data-panel"
       )
       .forEach((el) => el.classList.add("reveal"));
 
@@ -217,52 +199,40 @@ export default function App() {
       <Header />
 
       <main id="conteudo">
-        
-        
-<HeroSection />
+        <HeroSection />
 
-<section
-  className="manifesto manifesto-fjg-quote manifesto-prefeito"
-  aria-label="Mensagem do prefeito Eduardo Cavaliere"
->
-  <div
-    className="manifesto-pattern"
-    aria-hidden="true"
-  />
+        <section
+          className="manifesto manifesto-fjg-quote manifesto-prefeito"
+          aria-label="Mensagem do prefeito Eduardo Cavaliere"
+        >
+          <div className="manifesto-pattern" aria-hidden="true" />
 
-  <div className="container manifesto-inner reveal">
-    <span className="manifesto-eyebrow">
-      MEMÓRIA · RECONHECIMENTO · DIREITOS
-    </span>
+          <div className="container manifesto-inner reveal">
+            <span className="manifesto-eyebrow">
+              MEMÓRIA · RECONHECIMENTO · DIREITOS
+            </span>
 
-    <blockquote className="manifesto-quote">
-      <p>
-        “A história negra construiu o Rio.
-      </p>
+            <blockquote className="manifesto-quote">
+              <p>“A história negra construiu o Rio.</p>
 
-      <p className="manifesto-quote-emphasis">
-        Cabe à Prefeitura honrar essa história
-        com reconhecimento, direitos e
-        oportunidades.”
-      </p>
-    </blockquote>
+              <p className="manifesto-quote-emphasis">
+                Cabe à Prefeitura honrar essa história com reconhecimento,
+                direitos e oportunidades.”
+              </p>
+            </blockquote>
 
-    <div className="manifesto-quote-signature">
-      <span
-        className="manifesto-quote-rule"
-        aria-hidden="true"
-      />
+            <div className="manifesto-quote-signature">
+              <span className="manifesto-quote-rule" aria-hidden="true" />
 
-      <p>
-        <strong>Eduardo Cavaliere</strong>
-        <span>Prefeito da Cidade do Rio de Janeiro</span>
-      </p>
-    </div>
-  </div>
-</section>
+              <p>
+                <strong>Eduardo Cavaliere</strong>
+                <span>Prefeito da Cidade do Rio de Janeiro</span>
+              </p>
+            </div>
+          </div>
+        </section>
 
-<StaticSection section="stats" />
-
+        <StaticSection section="stats" />
 
         <StorySection />
 
@@ -306,10 +276,9 @@ export default function App() {
 
       <StaticSection section="footer" />
 
-      <PolicyModal
-        policy={selected}
-        onClose={closeModal}
-      />
+      <PolicyModal policy={selected} onClose={closeModal} />
+
+      <PrivacyCookies />
     </>
   );
 }

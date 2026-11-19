@@ -136,8 +136,7 @@ export function Catalog({
                 </div>
                 <h3>{p.name}</h3>
                 <p>{p.what}</p>
-                <div className="policy-foot">
-                  <span className="status">{p.status}</span>
+                <div className="policy-foot" style={{ justifyContent: "flex-end" }}>
                   <button
                     className="details"
                     type="button"
